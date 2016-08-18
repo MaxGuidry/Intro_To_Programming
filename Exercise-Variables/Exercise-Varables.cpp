@@ -7,7 +7,42 @@ void number7();
 
 int main()
 { 
-	number7();
+	int sectionnum;
+	std::cout << "Enter the number of the section you would like to go to." << std::endl;
+	std::cin >> sectionnum;
+	switch (sectionnum)
+	{
+	case 1: {
+		number1();
+		break;
+	}
+
+	case 4: 
+	{
+		number4();
+		break;
+	}
+	case 5: 
+	{
+		number5();
+		break;
+	}
+	case 6:
+	{
+		number6();
+		break;
+	}
+	case 7: 
+	{
+		number7();
+		break;
+	}
+	default:
+	{
+		std::cout << "Improper input.";
+	}
+	}
+	
 	system("pause");
 	return 0;
 }
@@ -122,6 +157,7 @@ void number6()
 
 void number7()
 {
+	std::cout << "Enter any two characters." << std::endl;
 	char angel;
 	char devil;
 	std::cin >> angel >> devil;
