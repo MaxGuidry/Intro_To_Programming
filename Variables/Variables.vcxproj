@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{59D55BEB-4D62-41A9-848C-BC36C6A8EDC5}</ProjectGuid>
+    <ProjectGuid>{04A99521-9C1C-4017-8587-2D1A9B35DE42}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>IntroToProgramming</RootNamespace>
+    <RootNamespace>Variables</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,7 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Intro.cpp" />
+    <ClCompile Include="Variables.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
