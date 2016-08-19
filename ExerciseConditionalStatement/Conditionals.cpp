@@ -3,10 +3,12 @@ void exercise1();
 void exercise2();
 void exercise3();
 void exercise4();
+void exercise6();
+
 
 int main()
 {
-	
+	exercise6();
 	system("pause");
 	return 0;
 }
@@ -60,7 +62,7 @@ void exercise2()
 //	}
 //}
 
-void excercise4()
+void exercise4()
 {
 	int choice;
 	switch (choice)
@@ -83,17 +85,37 @@ void excercise4()
 	}
 }
 
-void exercise6() // this is how you do it Max this is not complete
+void exercise6() 
 {
 	int firstone;
 	int secondone;
-	int equal;
+	float equal;
 	char something;
 	std::cin >> firstone >> something >> secondone;
 	switch ((int)something)
 	{
-	case 43:
-		equal = firstone + secondone;
+	case 43: 
+		equal = (float)firstone + (float)secondone;
 		std::cout << equal << std::endl;
+		break;
+	case 45:
+		equal = (float)firstone - (float)secondone;
+		std::cout << equal << std::endl;
+		break;
+	case 47:
+		equal = (float)firstone / (float)secondone;
+		std::cout << equal << std::endl;
+		break;
+	case 42: 
+		equal = (float)firstone * (float)secondone;
+		std::cout << equal << std::endl;
+		break;
+	case 37:
+		equal = firstone % secondone;
+		std::cout << equal << std::endl;
+		break;
+	default:
+		std::cout << "Invalid character input";
 	}
+	return;
 }
