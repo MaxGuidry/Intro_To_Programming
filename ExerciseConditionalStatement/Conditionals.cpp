@@ -12,7 +12,7 @@ void exerciserand();
 
 int main()
 {
-	exercise3();
+	exercise7();
 	system("pause");
 	return 0;
 }
@@ -133,26 +133,11 @@ void exercise3()
 		std::cout << allthemdigits[0] << std::endl << allthemdigits[1] << allthemdigits[2];
 	}
 
-	std::cout << allthemdigits[0] << allthemdigits[1] << allthemdigits[2] << std::endl;
+	std::cout << std::endl << allthemdigits[0] << std::endl << allthemdigits[1] << std::endl << allthemdigits[2] << std::endl;
 
 
 
  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 void exercise4()
