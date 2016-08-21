@@ -53,7 +53,7 @@ void exercise1()
 
 		}
 	} while (choice < 1 || choice >4);
-	
+
 
 }
 
@@ -79,7 +79,7 @@ void exercise2()
 		}
 	}
 }
- 
+
 
 void exercise3()
 {

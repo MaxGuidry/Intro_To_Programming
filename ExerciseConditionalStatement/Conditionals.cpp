@@ -143,6 +143,7 @@ void exercise3()
 void exercise4()
 {
 	int choice;
+	std::cin >> choice;
 	switch (choice)
 	{
 	case 1: 
