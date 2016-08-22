@@ -1,5 +1,6 @@
 #include<iostream>  //3 and 5 skipped
 #include<time.h>
+#include<string>
 void exercise1();
 void exercise2();
 void exercise3();
@@ -12,7 +13,7 @@ void exerciserand();
 
 int main()
 {
-	exercise7();
+	exerciserand();
 	system("pause");
 	return 0;
 }
@@ -265,42 +266,50 @@ void exercise7()
 void exerciserand()
 {
 	int randomnum;
-	randomnum = rand() % 10 + 1;
+	srand(time(NULL));
+	randomnum = rand() % 12 + 1;
+	std::string arrayofstrings[12] = { "first" ,"second", "third", "fourth", "fifth", "sixth", "seventh", "eigth", "ninth", "tenth", "eleventh", "twelth", };
 	switch (randomnum)
 	{
 	case 1:
-		std::cout << "Jan";
+		std::cout <<arrayofstrings[randomnum];
 		break;
 	case 2:
-		std::cout << "Feb";
+		std::cout << arrayofstrings[randomnum];
 		break;
 	case 3:
-		std::cout << "Mar";
+		std::cout << arrayofstrings[randomnum];
 		break;
 	case 4:
-		std::cout << "Apr";
+		std::cout << arrayofstrings[randomnum];
 		break;
 	case 5:
-		std::cout << "May";
+		std::cout << arrayofstrings[randomnum];
 		break;
 	case 6:
-		std::cout << "Jun";
+		std::cout << arrayofstrings[randomnum];
 		break;
 	case 7:
-		std::cout << "Jul";
+		std::cout << arrayofstrings[randomnum];
 		break;
 	case 8:
-		std::cout << "Aug";
+		std::cout << arrayofstrings[randomnum];
 		break;
 	case 9:
-		std::cout << "Sep";
+		std::cout << arrayofstrings[randomnum];
 		break;
 	case 10:
-		std::cout << "oct";
+		std::cout << arrayofstrings[randomnum];
 		break;
-
+	case 11:
+		std::cout << arrayofstrings[randomnum];
+		break;
+	case 12:
+		std::cout << arrayofstrings[randomnum];
+		break;
 	}
-
+	
+	std::cout << std::endl;
 
 }
 
