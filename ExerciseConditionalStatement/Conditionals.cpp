@@ -13,7 +13,7 @@ void exerciserand();
 
 int main()
 {
-	exercise3();
+	exercise7();
 	system("pause");
 	return 0;
 }
@@ -177,59 +177,60 @@ void exercise6()
 	}
 	return;
 }
-
-void exercise7()
-{
-	int month;
-	std::cout << "Please enter the number of the month you want";
-	std::cout << std::endl << "ex. : January-1" << std::endl << "December-12";
-	std::cout << std::endl;
-	do{
-		std::cin >> month;
-		switch (month)
-		{
-		case 1:
-			std::cout << "January has 31 days." << std::endl;
-			break;
-		case 2:
-			std::cout << "February has 28 days." << std::endl;
-			break;
-		case 3:
-			std::cout << "March has 31 days." << std::endl;
-			break;
-		case 4:
-			std::cout << "April has 30 days." << std::endl;
-			break;
-		case 5:
-			std::cout << "May has 31 days." << std::endl;
-			break;
-		case 6:
-			std::cout << "June has 30 days." << std::endl;
-			break;
-		case 7:
-			std::cout << "July has 31 days." << std::endl;
-			break;
-		case 8:
-			std::cout << "August has 31 days." << std::endl;
-			break;
-		case 9:
-			std::cout << "September has 30 days." << std::endl;
-			break;
-		case 10:
-			std::cout << "October has 31 days." << std::endl;
-			break;
-		case 11:
-			std::cout << "November has 30 days." << std::endl;
-			break;
-		case 12:
-			std::cout << "December has 31 days." << std::endl;
-			break;
-		default:
-			std::cout << "Error: invalid month number. Please try again." << std::endl;
-
-		}
-	} while (month < 1 || month>12);
-}
+//
+//void exercise7()
+//{
+//	int month;
+//	std::cout << "Please enter the number of the month you want";
+//	std::cout << std::endl << "ex. : January-1" << std::endl << "December-12";
+//	std::cout << std::endl;
+//	
+//	do{
+//		std::cin >> month;
+//		switch (month)
+//		{
+//		case 1:
+//			std::cout << "January has 31 days." << std::endl;
+//			break;
+//		case 2:
+//			std::cout << "February has 28 days." << std::endl;
+//			break;
+//		case 3:
+//			std::cout << "March has 31 days." << std::endl;
+//			break;
+//		case 4:
+//			std::cout << "April has 30 days." << std::endl;
+//			break;
+//		case 5:
+//			std::cout << "May has 31 days." << std::endl;
+//			break;
+//		case 6:
+//			std::cout << "June has 30 days." << std::endl;
+//			break;
+//		case 7:
+//			std::cout << "July has 31 days." << std::endl;
+//			break;
+//		case 8:
+//			std::cout << "August has 31 days." << std::endl;
+//			break;
+//		case 9:
+//			std::cout << "September has 30 days." << std::endl;
+//			break;
+//		case 10:
+//			std::cout << "October has 31 days." << std::endl;
+//			break;
+//		case 11:
+//			std::cout << "November has 30 days." << std::endl;
+//			break;
+//		case 12:
+//			std::cout << "December has 31 days." << std::endl;
+//			break;
+//		default:
+//			std::cout << "Error: invalid month number. Please try again." << std::endl;
+//
+//		}
+//	} while (month < 1 || month>12);
+//}
 
 void exerciserand()
 {
@@ -307,3 +308,51 @@ d.true
 e.true
 
 */
+
+
+void exercise7()
+{
+	int month;
+	int monthnum;
+	std::cout << "Please enter the number of the month you want";
+	std::cout << std::endl << "ex. : January-1" << std::endl << "December-12";
+	std::cout << std::endl;
+
+	do
+	{
+		std::cin >> monthnum;
+		if (monthnum == 1 || monthnum == 3 || monthnum == 5 || monthnum == 7 || monthnum == 8 || monthnum == 10 || monthnum == 12)
+		{
+			month = 1;
+		}
+		else if (monthnum == 4 || monthnum == 6 || monthnum == 9)
+		{
+			month = 2;
+		}
+		else if (monthnum == 2)
+		{
+			month = 3;
+		}
+		else
+		{
+			std::cout << "invalid month number try agian." << std::endl;
+		}
+	} while (monthnum >12 || monthnum < 1);
+
+
+		switch (month)
+		{
+		case 1:
+			std::cout << "31 days." << std::endl;
+			break;
+		case 2:
+			std::cout << "30 days." << std::endl;
+			break;
+		case 3:
+			std::cout << "28 days." << std::endl;
+			break;
+		
+		default:;
+
+		}
+}
