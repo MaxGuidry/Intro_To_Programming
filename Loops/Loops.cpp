@@ -136,7 +136,6 @@ void exercise3()
 			sum = sum + i;
 			std::cout << i << "   " << sum << std::endl;
 		}
-		i++;
 	}
 	std::cout << sum << std::endl;
 }

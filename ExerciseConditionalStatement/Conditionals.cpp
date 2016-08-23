@@ -13,7 +13,7 @@ void exerciserand();
 
 int main()
 {
-	exerciserand();
+	exercise3();
 	system("pause");
 	return 0;
 }
@@ -50,38 +50,6 @@ void exercise2()
 
 	return;
 }
-
-//
-//void exercise3()
-//{
-//	int a, b, c, d, e;
-//	std::cin >> a >> b >> c >> d >> e;
-//	int sum = a + b + c + d + e;
-//	int arrayofstuff[5] = { a,b,c,d,e };
-//	int thisthinghere = 0;
-//	if (sum > 0)
-//	{
-//		for (; thisthinghere < 5; thisthinghere++)
-//		{
-//			arrayofstuff[thisthinghere];
-//
-//
-//
-//		}
-//	}
-//	
-//	else if (sum < 0)
-//	{
-//
-//	}
-//	else
-//	{
-//		std::cout << a << b << c << d << e;
-//	}
-//}
-
-
-
 
 
 
@@ -307,6 +275,8 @@ void exerciserand()
 	case 12:
 		std::cout << arrayofstrings[randomnum];
 		break;
+	default:
+		std::cout << "it didnt work";
 	}
 	
 	std::cout << std::endl;
