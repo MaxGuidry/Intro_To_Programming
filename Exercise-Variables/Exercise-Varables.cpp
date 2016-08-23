@@ -157,13 +157,21 @@ void number6()
 
 void number7()
 {
-	std::cout << "Enter any two characters." << std::endl;
+	std::cout << "Enter two letters." << std::endl;
 	char angel;
 	char devil;
-	std::cin >> angel >> devil;
+	std::cin >> angel;
+	if ((int)angel > 90)
+	{
+		angel = angel - 32;
+	}
+	std::cin >> devil;
+	if ((int)devil>90)
+	{
+		devil = devil - 32;
+	}
 	char newthing;
 	newthing = ((int)angel + (int)devil) /2;
 	std::cout << newthing << std::endl;
-
 	return;
 }

@@ -312,47 +312,28 @@ e.true
 
 void exercise7()
 {
-	int month;
 	int monthnum;
 	std::cout << "Please enter the number of the month you want";
 	std::cout << std::endl << "ex. : January-1" << std::endl << "December-12";
 	std::cout << std::endl;
-
 	do
 	{
 		std::cin >> monthnum;
 		if (monthnum == 1 || monthnum == 3 || monthnum == 5 || monthnum == 7 || monthnum == 8 || monthnum == 10 || monthnum == 12)
 		{
-			month = 1;
+			std::cout << "31 days." << std::endl;
 		}
 		else if (monthnum == 4 || monthnum == 6 || monthnum == 9 || monthnum == 11)
 		{
-			month = 2;
+			std::cout << "30 days." << std::endl;
 		}
 		else if (monthnum == 2)
 		{
-			month = 3;
+			std::cout << "28 days." << std::endl;
 		}
 		else
 		{
 			std::cout << "invalid month number try agian." << std::endl;
 		}
 	} while (monthnum >12 || monthnum < 1);
-
-
-		switch (month)
-		{
-		case 1:
-			std::cout << "31 days." << std::endl;
-			break;
-		case 2:
-			std::cout << "30 days." << std::endl;
-			break;
-		case 3:
-			std::cout << "28 days." << std::endl;
-			break;
-		
-		default:;
-
-		}
 }
