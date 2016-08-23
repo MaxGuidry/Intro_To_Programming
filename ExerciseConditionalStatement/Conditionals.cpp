@@ -325,7 +325,7 @@ void exercise7()
 		{
 			month = 1;
 		}
-		else if (monthnum == 4 || monthnum == 6 || monthnum == 9)
+		else if (monthnum == 4 || monthnum == 6 || monthnum == 9 || monthnum == 11)
 		{
 			month = 2;
 		}
