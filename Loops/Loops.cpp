@@ -9,7 +9,50 @@ void exercise4part3();
 
 int main()
 {
-	exercise3();
+	std::cout << "For exercise 1 enter:1" << std::endl << "For exercise 2 enter:2" << std::endl << "For exercise 3 enter:3" << std::endl;
+	std::cout << "For exercise 4 part 1 enter:4" << std::endl << "For exercise 4 part 2 enter:5" << std::endl << "For exercise 4 part 3 enter:6" << std::endl;
+	int choice;
+	do
+	{
+		std::cin >> choice;
+		switch (choice)
+		{
+		case 1:
+		{
+			exercise1();
+			break;
+		}
+		case 2:
+		{
+			exercise2();
+			break; 
+		}
+		case 3:
+		{
+			exercise3();
+			break;
+		}
+		case 4:
+		{
+			exercise4part1();
+			break;
+		}
+		case 5:
+		{
+			exercise4part2();
+			break;
+		}
+		case 6:
+		{
+			exercise4part3();
+			break;
+		}
+		default:
+		{
+			std::cout << "invalid input try again" << std::endl;
+		}
+		}
+	} while (choice > 6 || choice < 1);
 	system("pause");
 	return 0;
 }
