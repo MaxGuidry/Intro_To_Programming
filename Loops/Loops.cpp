@@ -9,8 +9,11 @@ void exercise4part3();
 
 int main()
 {
-	std::cout << "For exercise 1 enter:1" << std::endl << "For exercise 2 enter:2" << std::endl << "For exercise 3 enter:3" << std::endl;
-	std::cout << "For exercise 4 part 1 enter:4" << std::endl << "For exercise 4 part 2 enter:5" << std::endl << "For exercise 4 part 3 enter:6" << std::endl;
+	std::cout << "For exercise 1 enter:1" << std::endl << "For exercise 2 enter:2" << std::endl; 
+	std::cout << "For exercise 3 enter:3" << std::endl;
+	std::cout << "For exercise 4 part 1 enter:4" << std::endl;
+	std::cout << "For exercise 4 part 2 enter:5" << std::endl;
+	std::cout << "For exercise 4 part 3 enter:6" << std::endl;
 	int choice;
 	do
 	{
@@ -61,7 +64,8 @@ int main()
 void exercise1()
 {
 	std::cout << "for 100-0 input 1" << std::endl << "for 99-0 input 2" << std::endl;
-	std::cout << "for 100-1 input 3" << std::endl << "for 100-0 in decrements of 2 input 4" << std::endl;
+	std::cout << "for 100-1 input 3" << std::endl;
+	std::cout << "for 100-0 in decrements of 2 input 4" << std::endl;
 	int choice;
 	do
 	{
@@ -145,7 +149,8 @@ void exercise4part1()
 {
 	int choice;
 	std::cout << "for 100-0 input 1" << std::endl << "for 99-0 input 2" << std::endl;
-	std::cout << "for 100-1 input 3" << std::endl << "for 100-0 in decrements of 2 input 4" << std::endl;
+	std::cout << "for 100-1 input 3" << std::endl;
+	std::cout << "for 100-0 in decrements of 2 input 4" << std::endl;
 	
 	do
 	{
