@@ -5,12 +5,13 @@ void loopingAndInitializing();
 void storingUserInputInArrays();
 void sortingUserInputNumbers();
 void twoDimensionalArray();
+void sumTwoDimensionalArray();
 void characterHealth();
-
+void gameOfThrones();
 
 int main()
 {
-	characterHealth();
+	gameOfThrones();
 	system("pause");
 	return 0;
 }
@@ -42,8 +43,8 @@ void loopingAndInitializing()
 	int data[10];
 	for (int i = 10; i > 0; i--)
 	{
-		data[i-1] = i;
-		std::cout << data[i-1] << std::endl;
+		data[i - 1] = i;
+		std::cout << data[i - 1] << std::endl;
 	}
 
 }
@@ -61,7 +62,7 @@ void storingUserInputInArrays()
 	std::cout << std::endl;
 	for (i; i > 0; i--)
 	{
-		std::cout << userInputArray[i-1] << std::endl;
+		std::cout << userInputArray[i - 1] << std::endl;
 	}
 }
 //number5
@@ -75,9 +76,9 @@ void sortingUserInputNumbers()
 	}
 	for (i; i >= 0; i--)
 	{
-		for (int j=0; j < 10; j++)
+		for (int j = 0; j < 10; j++)
 		{
-			if (tenUserValues[j] < tenUserValues[j+1])
+			if (tenUserValues[j] < tenUserValues[j + 1])
 			{
 				int temp;
 				temp = tenUserValues[j];
@@ -86,40 +87,79 @@ void sortingUserInputNumbers()
 			}
 		}
 	}
-	
-		std::cout << tenUserValues[0] << " " << tenUserValues[9] << std::endl;
-}
 
+	std::cout << tenUserValues[0] << " " << tenUserValues[9] << std::endl;
+}
+//number6
 void twoDimensionalArray()
 {
 	int twoDimensions[3][3];
 	int h = 1;
-	for(int i =0; i<3;i++)
+	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
+
 			twoDimensions[i][j] = h;
-			std::cout << twoDimensions[i][j] << std::endl;
+			std::cout << twoDimensions[i][j];
 			h++;
+			if (j < 2)
+			{
+				std::cout << " ";
+			}
+			else
+			{
+				std::cout << std::endl;
+			}
 		}
 	}
 }
-
+//number7
 void sumTwoDimensionalArray()
 {
+
 	int arrayInTwoDimensions[29][5];
-	for (int i =0;i <29;i++)
+	for (int i = 0; i < 29; i++)
 	{
 		for (int j = 0; j < 5; j++)
 		{
-			int sumi = 0;
-			int sumj = 0;
 			arrayInTwoDimensions[i][j] = i;
-			sumi = sumi + arrayInTwoDimensions[i][j];
+
 		}
 	}
-}
+	int sumrow;
+	for (int h = 0; h < 29; h++)
+	{
+		sumrow = 0;
 
+
+		for (int g = 0; g < 5; g++)
+		{
+			sumrow = sumrow + arrayInTwoDimensions[h][g];
+		}
+
+
+		std::cout << sumrow << std::endl;
+	}
+	std::cout << std::endl;
+	int sumcolumn;
+	for (int h = 0; h < 5; h++)
+	{
+		sumcolumn = 0;
+
+
+		for (int g = 0; g < 29; g++)
+		{
+			sumcolumn = sumcolumn + arrayInTwoDimensions[g][h];
+		}
+
+
+		std::cout << sumcolumn << std::endl;
+	}
+
+}
+//number8
+//Mine runs more than 5 times because I wanted a working game so it runs until they are all dead.
 void characterHealth()
 {
 	srand(time(NULL));
@@ -127,9 +167,10 @@ void characterHealth()
 	int characterNumber;
 	int healthSum = 1;
 	std::cout << "Attack characters:0-4" << std::endl;
-	
-	while (healthSum>0)
+
+	while (healthSum > 0)
 	{
+		healthSum = 0;
 		for (int i = 0; i < 5; i++)
 		{
 			std::cout << "Character " << i << " has " << healthLevels[i] << " left" << std::endl;
@@ -155,14 +196,91 @@ void characterHealth()
 		}
 		for (int j = 0; j < 5; j++)
 		{
-			healthSum = 0;
+			if (healthLevels[j] < 0)
+			{
+				healthLevels[j] = 0;
+			}
 			healthSum = healthSum + healthLevels[j];
 		}
 	}
 }
 
 
+void gameOfThrones()
+{
+	int dragonFood[3][7];
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 7; j++)
+		{
+			std::cin >> dragonFood[i][j];
+		}
+	}
 
+	
+	int dragonOneAvg;
+	int dragonOneSum = 0;
+	int dragonTwoAvg;
+	int dragonTwoSum = 0;
+	int dragonThreeAvg;
+	int dragonThreeSum = 0;
+	int totalAvg;
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 7; j++)
+		{
+			if (i == 0)
+			{
+				dragonOneSum = dragonOneSum + dragonFood[i][j];
+			}
+			else if (i == 1)
+			{
+				dragonTwoSum = dragonTwoSum + dragonFood[i][j];
+			}
+			else if (i == 2)
+			{
+				dragonThreeSum = dragonThreeSum + dragonFood[i][j];
+			}
+		}
+	}
+	
+	for (int y = 0; y < 20; y++)
+	{
+		for (int i = 0; i < 3; i++)
+		{
+
+			for (int j = 0; j < 6; j++)
+			{
+				if (dragonFood[i][j] < dragonFood[i][j + 1])
+				{
+					int temp;
+					temp = dragonFood[i][j];
+					dragonFood[i][j] = dragonFood[i][j + 1];
+					dragonFood[i][j + 1] = temp;
+				}
+				if (dragonFood[i][j] < dragonFood[i + 1][j])
+				{
+					int temp;
+					temp = dragonFood[i][j];
+					dragonFood[i][j] = dragonFood[i + 1][j];
+					dragonFood[i + 1][j] = temp;
+				}
+
+			}
+		}
+	}
+	dragonOneAvg = dragonOneSum / 7;
+	dragonTwoAvg = dragonTwoSum / 7;
+	dragonThreeAvg = dragonThreeSum / 7;
+	totalAvg = (dragonOneSum + dragonTwoSum + dragonThreeSum) / 21;
+	std::cout << "Dragon one average: " << dragonOneAvg << std::endl << "Dragon two average " << dragonTwoAvg << std::endl << "Dragon three average " << dragonThreeAvg << std::endl;
+	std::cout << "Total average: " << totalAvg << std::endl;
+	std::cout << "Greatest " << dragonFood[0][0] << std::endl << "Least " << dragonFood[2][6] << std::endl;
+
+
+
+
+}
 
 
 
