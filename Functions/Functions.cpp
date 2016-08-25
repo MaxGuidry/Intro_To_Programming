@@ -69,7 +69,7 @@ int coinToss()
 	std::cin >> numberOfThrows;
 	for (int i = 0; i < numberOfThrows; i++)
 	{
-		Sleep(3000);
+		Sleep(300);
 		randNum = rand() % 2 + 1;
 		switch (randNum)
 		{
