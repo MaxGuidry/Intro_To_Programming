@@ -1,5 +1,6 @@
 #include<iostream>
 #include<time.h>
+#include<string>
 void practiceArrays();
 void loopingAndInitializing();
 void storingUserInputInArrays();
@@ -36,7 +37,6 @@ e.error
 */
 
 
-
 //number 3	
 void loopingAndInitializing()
 {
@@ -50,7 +50,6 @@ void loopingAndInitializing()
 }
 //number4
 void storingUserInputInArrays()
-
 {
 	int userInputArray[5];
 	int i = 0;
@@ -101,17 +100,11 @@ void twoDimensionalArray()
 		{
 
 			twoDimensions[i][j] = h;
-			std::cout << twoDimensions[i][j];
+			std::cout << twoDimensions[i][j] << " ";
 			h++;
-			if (j < 2)
-			{
-				std::cout << " ";
-			}
-			else
-			{
-				std::cout << std::endl;
-			}
+
 		}
+		std::cout << std::endl;
 	}
 }
 //number7
@@ -216,8 +209,6 @@ void gameOfThrones()
 			std::cin >> dragonFood[i][j];
 		}
 	}
-
-	
 	int dragonOneAvg;
 	int dragonOneSum = 0;
 	int dragonTwoAvg;
@@ -243,12 +234,13 @@ void gameOfThrones()
 			}
 		}
 	}
-	
+	int x =0;
+	int least = dragonFood[0][0];
+	int greatest = dragonFood[0][0];
 	for (int y = 0; y < 20; y++)
 	{
 		for (int i = 0; i < 3; i++)
 		{
-
 			for (int j = 0; j < 6; j++)
 			{
 				if (dragonFood[i][j] < dragonFood[i][j + 1])
@@ -258,14 +250,22 @@ void gameOfThrones()
 					dragonFood[i][j] = dragonFood[i][j + 1];
 					dragonFood[i][j + 1] = temp;
 				}
-				if (dragonFood[i][j] < dragonFood[i + 1][j])
+				/*if (dragonFood[i][j] < dragonFood[i + 1][j])
 				{
 					int temp;
 					temp = dragonFood[i][j];
 					dragonFood[i][j] = dragonFood[i + 1][j];
 					dragonFood[i + 1][j] = temp;
-				}
+				}*/
+			}
+			for (x; x < 2;)
+			{
+				if (greatest < dragonFood[i][0])
 
+				{
+					greatest = dragonFood[i][0];
+					x = i;
+				}
 			}
 		}
 	}
@@ -273,31 +273,11 @@ void gameOfThrones()
 	dragonTwoAvg = dragonTwoSum / 7;
 	dragonThreeAvg = dragonThreeSum / 7;
 	totalAvg = (dragonOneSum + dragonTwoSum + dragonThreeSum) / 21;
-	std::cout << "Dragon one average: " << dragonOneAvg << std::endl << "Dragon two average " << dragonTwoAvg << std::endl << "Dragon three average " << dragonThreeAvg << std::endl;
+	std::cout << "Dragon one average: " << dragonOneAvg << std::endl << "Dragon two average ";
+	std::cout << dragonTwoAvg << std::endl << "Dragon three average " << dragonThreeAvg << std::endl;
 	std::cout << "Total average: " << totalAvg << std::endl;
-	std::cout << "Greatest " << dragonFood[0][0] << std::endl << "Least " << dragonFood[2][6] << std::endl;
-
-
-
-
+	std::cout << "Greatest " << greatest << std::endl << "Least " << least << std::endl;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 void practiceArrays()
 {
