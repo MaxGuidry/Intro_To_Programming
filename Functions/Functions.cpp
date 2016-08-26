@@ -10,12 +10,13 @@ int userInput();
 int SumArray(int[], int);
 int MinInArray(int[], int);
 int MultiplyByIndex(int[], int[], int);
+int threeArrays(int[], int[], int[], int);
+int runningSum(int[], int);
 
 int main()
-{
-	coinToss();
-
-
+{	
+	int arrayOne[5] = { 3,2,4,7 };
+	runningSum(arrayOne, 4);
 	system("pause");
 	return 0;
 }
@@ -170,6 +171,46 @@ int MultiplyByIndex(int integer_array[], int output_array[], int a)
 	{
 		output_array[i] = integer_array[i] *i;
 		std::cout << output_array[i] << std::endl;
+	}
+	return 0;
+}
+
+/*
+11. Write a function that takes as its parameters two input arrays of integers , an integer for
+their size and an output array. Set the value at each index to the sum of the corresponding
+two elements of the input arrays at the same index. Assume the three arrays are of equal
+length. Write your own code for testing this function.*/
+
+int threeArrays(int firstArray[], int secondArray[], int thirdArray[], int a)
+{
+	for (int i = 0; i < a; i++)
+	{
+		thirdArray[i] = firstArray[i] + secondArray[i];
+		std::cout << thirdArray[i] << std::endl;
+	}
+	return 0;
+}
+
+/*
+12. Write a function that takes as its parameters an array called array_input of integers and the
+size of the array and modifies the given array so that it contains a running sum of its
+original values. For example, if the array originally had the values {3,2,4,7}, after running
+your function that array would instead contain {3,5,9,16}, and if you ran it another time
+passing the modified array in again, you'd have {3,8,17,33}. Write your own code for testing
+this function.
+*/
+
+int runningSum(int arrayone[], int a)
+{
+	for (int x = 0; x < 2; x++)
+	{
+		for (int i = 0; i < a; i++)
+		{
+			int sum = 0;
+			sum = arrayone[i] + arrayone[i + 1];
+			arrayone[i + 1] = sum;
+			std::cout << arrayone[i] << std::endl;
+		}
 	}
 	return 0;
 }
