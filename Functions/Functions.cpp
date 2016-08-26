@@ -18,11 +18,13 @@ int searchingArray(int[], int, int);
 int copyingArrays(int[], int[], int[], int);
 int powerFunction();
 int lookAndSay(int[], int);
-void rockPaperScissors();
+void rockPaperScissors(int, int);
+int getUserGuess();
+int getComputerGuess();
 
 int main()
 {
-	rockPaperScissors();
+	rockPaperScissors(getComputerGuess(), getUserGuess());
 	system("pause");
 	return 0;
 }
@@ -80,12 +82,12 @@ int coinToss()
 		randNum = rand() % 2 + 1;
 		switch (randNum)
 		{
-		case 1:
-			std::cout << "Heads" << std::endl;
-			break;
-		case 2:
-			std::cout << "Tails" << std::endl;
-			break;
+			case 1:
+				std::cout << "Heads" << std::endl;
+				break;
+			case 2:
+				std::cout << "Tails" << std::endl;
+				break;
 		}
 	}
 	return num;
@@ -375,39 +377,32 @@ void rockPaperScissors()
 
 
 
-void rockPaperScissors()
+void rockPaperScissors(int computerChoice, int userChoice)
 {
- 
-	int userChoice;
-	int computerChoice;
-	do
+	while (userChoice == computerChoice || userChoice > 3 || userChoice < 1)
 	{
-		std::cout << "1-Rock" << std::endl << "2-Paper" << std::endl << "3-Scissors" << std::endl;
+		std::cout << "You Tied try again" << std::endl;
 		std::cin >> userChoice;
 		computerChoice = rand() % 3 + 1;
-		std::cout << "Computer chose: " << computerChoice << std::endl;
+		std::cout << "Computer chose: " << computerChoice << std::endl;;
+	}
 
-		switch (userChoice)
-		{
+	switch (userChoice)
+	{
 		case 1:
 		{
 			switch (computerChoice)
 			{
-			case 1:
-			{
-				std::cout << "You Tied" << std::endl;
-				break;
-			}
-			case 2:
-			{
-				std::cout << "You Lose" << std::endl;
-				break;
-			}
-			case 3:
-			{
-				std::cout << "You Win" << std::endl;
-				break;
-			}
+				case 2:
+				{
+					std::cout << "You Lose" << std::endl;
+					break;
+				}
+				case 3:
+				{
+					std::cout << "You Win" << std::endl;
+					break;
+				}
 			}
 			break;
 		}
@@ -415,21 +410,16 @@ void rockPaperScissors()
 		{
 			switch (computerChoice)
 			{
-			case 1:
-			{
-				std::cout << "You Win" << std::endl;
-				break;
-			}
-			case 2:
-			{
-				std::cout << "You Tied" << std::endl;
-				break;
-			}
-			case 3:
-			{
-				std::cout << "You Lose" << std::endl;
-				break;
-			}
+				case 1:
+				{
+					std::cout << "You Win" << std::endl;
+					break;
+				}
+				case 3:
+				{
+					std::cout << "You Lose" << std::endl;
+					break;
+				}
 			}
 			break;
 		}
@@ -437,55 +427,68 @@ void rockPaperScissors()
 		{
 			switch (computerChoice)
 			{
-			case 2:
-			{
-				std::cout << "You Win" << std::endl;
-				break;
-			}
-			case 1:
-			{
-				std::cout << "You Lose" << std::endl;
-				break;
-			}
-			case 3:
-			{
-				std::cout << "You Tied" << std::endl;
-				
-			}
+				case 2:
+				{
+					std::cout << "You Win" << std::endl;
+					break;
+				}
+				case 1:
+				{
+					std::cout << "You Lose" << std::endl;
+					break;
+				}
 			}
 			break;
 		}
-		}
+	}
 
 
 
-		/*if (userChoice == computerChoice)
-		{
-			std::cout << "You tied try again" << std::endl;
-		}
-		else if (userChoice == 1 && computerChoice == 2)
-		{
-			std::cout << "You Lose" << std::endl;
-		}
-		else if (userChoice == 1 && computerChoice == 3)
-		{
-			std::cout << "You Win" << std::endl;
-		}
-		else if (userChoice == 2 && computerChoice == 1)
-		{
-			std::cout << "You Win" << std::endl;
-		}
-		else if (userChoice == 2 && computerChoice == 3)
-		{
-			std::cout << "You lose" << std::endl;
-		}
-		else if (userChoice == 3 && computerChoice == 1)
-		{
-			std::cout << "You win" << std::endl;
-		}
-		else if (userChoice == 3 && computerChoice == 2)
-		{
-			std::cout << "You lose" << std::endl;
-		}*/
-	} while (userChoice == computerChoice);
+	/*
+	if (userChoice == computerChoice)
+	{
+		std::cout << "You tied try again" << std::endl;
+	}
+	else if (userChoice == 1 && computerChoice == 2)
+	{
+		std::cout << "You Lose" << std::endl;
+	}
+	else if (userChoice == 1 && computerChoice == 3)
+	{
+		std::cout << "You Win" << std::endl;
+	}
+	else if (userChoice == 2 && computerChoice == 1)
+	{
+		std::cout << "You Win" << std::endl;
+	}
+	else if (userChoice == 2 && computerChoice == 3)
+	{
+		std::cout << "You lose" << std::endl;
+	}
+	else if (userChoice == 3 && computerChoice == 1)
+	]
+	{
+		std::cout << "You win" << std::endl;
+	}
+	else if (userChoice == 3 && computerChoice == 2)
+	{
+		std::cout << "You lose" << std::endl;
+	}
+	*/
+}
+
+int getUserGuess()
+{
+	int userChoice;
+	std::cout << "1-Rock" << std::endl << "2-Paper" << std::endl << "3-Scissors" << std::endl;
+	std::cin >> userChoice;
+	return userChoice;
+}
+int getComputerGuess()
+{
+	srand(time(NULL));
+	int computerChoice;
+	computerChoice = rand() % 3 + 1;
+	std::cout << "Computer chose: " << computerChoice << std::endl;
+	return computerChoice;
 }
