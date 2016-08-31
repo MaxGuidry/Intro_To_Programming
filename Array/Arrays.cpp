@@ -142,6 +142,7 @@ void characterHealth()
 			healthLevels[characterNumber] = healthLevels[characterNumber] - damageAmount;
 			if (healthLevels[characterNumber] <= 0)
 			{
+				healthLevels[characterNumber] = 0;
 				std::cout << "Character " << characterNumber << " is dead." << std::endl;
 			}
 		}
@@ -160,26 +161,6 @@ void characterHealth()
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 void practiceArrays()
 {
