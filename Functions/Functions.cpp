@@ -2,7 +2,6 @@
 #include<string>
 #include<time.h>
 #include<windows.h>
-#include<string>
 
 float smallerNumber(float, float);
 float numberInput();
@@ -24,10 +23,30 @@ int getComputerGuess();
 
 int main()
 {
-	rockPaperScissors(getComputerGuess(), getUserGuess());
+	int arrayone[4] = { 3,2,4,7 };
+	runningSum(arrayone,4);
 	system("pause");
 	return 0;
 }
+
+
+
+//
+//int main()
+//{
+//	std::string PlayAgain="";
+//	
+//	do
+//	{
+//		rockPaperScissors(getComputerGuess(), getUserGuess());
+//		std::cout << "Would you like to play again? y/n: " << std::endl;
+//		std::cin.ignore();
+//		std::getline (std::cin,PlayAgain);
+//		PlayAgain = PlayAgain[0];
+//	} while (PlayAgain == "y" || PlayAgain == "Y");
+//
+//	return 0;
+//}
 
 
 
@@ -212,13 +231,23 @@ int runningSum(int arrayone[], int a)
 {
 	for (int x = 0; x < 2; x++)
 	{
+		int sum = 0;
 		for (int i = 0; i < a; i++)
 		{
-			int sum = 0;
-			sum = arrayone[i] + arrayone[i + 1];
-			arrayone[i + 1] = sum;
-			std::cout << arrayone[i] << std::endl;
+			sum += arrayone[i];
+			arrayone[i] = sum;
+			
+			//bad dont do
+
+			//sum = arrayone[i] + arrayone[i + 1];
+			//arrayone[i + 1] = sum;
+
 		}
+		for (int r = 0; r < 4; r++)
+		{
+			std::cout << arrayone[r] << " ";
+		}
+		std::cout << "\n\n";
 	}
 	return 0;
 }
@@ -250,7 +279,8 @@ int searchingArray(int arrayone[], int a, int b)
 size of the input array, and two output arrays. All numbers in the input array that are
 positive are copied into the first output array and all numbers in the input array that are
 negative are copied into the second output array. The function should return how many
-numbers were copied into the first output array. Write your own code to test this function.
+numbers were copied into the first output array. Write your own code to test this function.
+
 */
 
 int copyingArrays(int inputArrayOne[], int outputArrayOne[], int outputArrayTwo[], int a)

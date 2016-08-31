@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IntroToProgramming", "IntroToProgramming\IntroToProgramming.vcxproj", "{59D55BEB-4D62-41A9-848C-BC36C6A8EDC5}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Array", "Array\Array.vcxproj", "{C41FEA2E-3D3D-4A8F-8823-A1E15D2B34BB}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Functions", "Functions\Functions.vcxproj", "{17E324DE-21B7-45F2-B29D-08AC6E067601}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Structs", "Structs\Structs.vcxproj", "{E6270A94-E350-49FC-932A-9F70A414BE73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,14 @@ Global
 		{17E324DE-21B7-45F2-B29D-08AC6E067601}.Release|x64.Build.0 = Release|x64
 		{17E324DE-21B7-45F2-B29D-08AC6E067601}.Release|x86.ActiveCfg = Release|Win32
 		{17E324DE-21B7-45F2-B29D-08AC6E067601}.Release|x86.Build.0 = Release|Win32
+		{E6270A94-E350-49FC-932A-9F70A414BE73}.Debug|x64.ActiveCfg = Debug|x64
+		{E6270A94-E350-49FC-932A-9F70A414BE73}.Debug|x64.Build.0 = Debug|x64
+		{E6270A94-E350-49FC-932A-9F70A414BE73}.Debug|x86.ActiveCfg = Debug|Win32
+		{E6270A94-E350-49FC-932A-9F70A414BE73}.Debug|x86.Build.0 = Debug|Win32
+		{E6270A94-E350-49FC-932A-9F70A414BE73}.Release|x64.ActiveCfg = Release|x64
+		{E6270A94-E350-49FC-932A-9F70A414BE73}.Release|x64.Build.0 = Release|x64
+		{E6270A94-E350-49FC-932A-9F70A414BE73}.Release|x86.ActiveCfg = Release|Win32
+		{E6270A94-E350-49FC-932A-9F70A414BE73}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
