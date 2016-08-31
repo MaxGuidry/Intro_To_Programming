@@ -13,7 +13,11 @@ void exerciserand();
 
 int main()
 {
-	exercise7();
+	int a = 45;
+	int b = 38;
+	int c = 330;
+	int greater = (a > b > c) ? a : (b > c) ? b : c;
+	std::cout << greater << std::endl;
 	system("pause");
 	return 0;
 }
