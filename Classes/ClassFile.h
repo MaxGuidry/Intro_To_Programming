@@ -1,7 +1,7 @@
 #pragma once
 #include<string>
 #include<iostream>
-
+/*
 class Zombie
 {
 public:
@@ -54,9 +54,10 @@ public:
 				m_items[i] = item;
 				break;
 			}
-		}*/
+		}
 		return true;
 	}
 
 	items book = items("Book", .5f, true, 5);
 };
+*/

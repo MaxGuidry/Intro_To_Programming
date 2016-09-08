@@ -1,7 +1,7 @@
 #include"ClassFile.h"
 
 
-
+/*
 Zombie::Zombie(int HealthValue, int DamageAmount, std::string PreviousJob, std::string ZombieName)
 {
 	m_Health = HealthValue;
@@ -17,3 +17,4 @@ void Zombie::Attack(Zombie &defender)
 	std::cout << "Zombie " << defender.m_Name << " has " << defender.m_Health << " health left" << std::endl;
 	std::cout << "Zombie " << this->m_Name << " has " << this->m_Health << " health left" << std::endl;
 }
+*/
