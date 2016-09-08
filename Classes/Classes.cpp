@@ -46,7 +46,6 @@ int main()
 	student Donray = student("Donray", 90);
 	student students[2] = { Max, Donray };
 	swap(students[0], students[1]);
-	std::cout << Max.m_Name << std::endl;
 	system("pause");
 	return 0;
 }
