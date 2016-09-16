@@ -75,6 +75,32 @@ int main()
 	Maximum(stuff, 5);
 	char search = 'a';
 	std::cout << Contains(word, search, 5) <<  std::endl;
+	/*
+	PREDITCTIONS
+	NONE OF IT WORKS
+	1.
+	2.
+	3.
+	4.
+	5.
+	*/
+	int * ptr_a, ptr_b, *ptr_c;
+	ptr_a = new int;
+	*ptr_a = 3;
+	ptr_b = ptr_a;
+	cout << *ptr_a << " " << *ptr_b << "\n";
+	ptr_b = new int;
+	*ptr_b = 9;
+	cout << *ptr_a << " " << *ptr_b << "\n";
+	*ptr_b = *ptr_a;
+	cout << *ptr_a << " " << *ptr_b << "\n";
+	delete ptr_a;
+	ptr_a = ptr_b;
+	cout << *ptr_a << " " << *&*&*&*&*ptr_b << "\n";
+	ptr_c = &ptr_a;
+	cout << *ptr_c << " " << **ptr_c << "\n";
+	delete ptr_a;
+	ptr_a = NULL;
 	system("pause");
 	return 0;
 }
@@ -110,7 +136,6 @@ int CountEven(int *array, int array_len)
 
 double * Maximum(double * array, int array_size)
 {
-	//double highest=*array;
 	double * highestPointer=&*array;
 	for (int i = 0; i < array_size; i++)
 	{
