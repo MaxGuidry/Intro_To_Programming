@@ -1,18 +1,22 @@
 #include<iostream>
 
-float math(float first,float second,float third);
+void PointersFunction(int*, int);
 
 int main()
 {
-	float first, second, third;
-	std::cin >> first >> second >> third;
-	std::cout << math(first, second, third) << std::endl;
+	int nums[50];
+	int size = 50;
+	PointersFunction(nums, size);
 	system("pause");
 	return 0;
 }
 
-
-float math(float first, float second, float third)
+void PointersFunction(int *array, int size)
 {
-	return 5*(first + second + third);
+	int index = 0;
+	for (int i = 2; i <= 2*size; i+=2)
+	{
+			*(array +index) = i;
+			index++;
+	}
 }

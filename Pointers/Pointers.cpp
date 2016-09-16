@@ -2,7 +2,7 @@
 void RevString(char*);
 int CountEven(int *, int);
 double *Maximum(double*, int);
-bool Contains(char*, char);
+bool Contains(char*, char,int);
 
 int main()
 {
@@ -30,7 +30,8 @@ int main()
 	int k;
 	i = 42;
 	k = i;
-	p = &i;	//k = 75;
+	p = &i;
+	//k = 75;
 	//*k = 75;
 	//p = 75;
 	*p = 75;
@@ -69,8 +70,11 @@ int main()
 	{
 		std::cout << something;
 	}
+	std::cout << std::endl;
 	double stuff[5] = { 28.989,577.999,577.99,7,1 };
 	Maximum(stuff, 5);
+	char search = 'a';
+	std::cout << Contains(word, search, 5) <<  std::endl;
 	system("pause");
 	return 0;
 }
@@ -106,19 +110,26 @@ int CountEven(int *array, int array_len)
 
 double * Maximum(double * array, int array_size)
 {
-	double highest=*array;
-	double * highestPointer=&highest;
+	//double highest=*array;
+	double * highestPointer=&*array;
 	for (int i = 0; i < array_size; i++)
 	{
-		if (*(array + i) > highest)
+		if (*(array + i) > *highestPointer)
 		{
-			highest = *(array + i);
+			highestPointer = &*(array + i);
 		}
 	}
 	return highestPointer;
 }
 
-bool Contains(char* array, char search_value)
+bool Contains(char* array, char search_value,int size)
 {
+	for (int i = 0; i < size; i++)
+	{
+		if (*(array + i) == search_value)
+		{
+			return true;
+		}
+	}
 	return false;
 }
