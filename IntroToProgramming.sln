@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Morning", "Morning\Morning.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointers", "Pointers\Pointers.vcxproj", "{8F8D1104-86A8-43B2-8BEE-3758751FC807}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Inheritance", "Inheritance\Inheritance.vcxproj", "{924C291B-F90D-4264-9CBA-1019953F7F0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -131,6 +133,14 @@ Global
 		{8F8D1104-86A8-43B2-8BEE-3758751FC807}.Release|x64.Build.0 = Release|x64
 		{8F8D1104-86A8-43B2-8BEE-3758751FC807}.Release|x86.ActiveCfg = Release|Win32
 		{8F8D1104-86A8-43B2-8BEE-3758751FC807}.Release|x86.Build.0 = Release|Win32
+		{924C291B-F90D-4264-9CBA-1019953F7F0E}.Debug|x64.ActiveCfg = Debug|x64
+		{924C291B-F90D-4264-9CBA-1019953F7F0E}.Debug|x64.Build.0 = Debug|x64
+		{924C291B-F90D-4264-9CBA-1019953F7F0E}.Debug|x86.ActiveCfg = Debug|Win32
+		{924C291B-F90D-4264-9CBA-1019953F7F0E}.Debug|x86.Build.0 = Debug|Win32
+		{924C291B-F90D-4264-9CBA-1019953F7F0E}.Release|x64.ActiveCfg = Release|x64
+		{924C291B-F90D-4264-9CBA-1019953F7F0E}.Release|x64.Build.0 = Release|x64
+		{924C291B-F90D-4264-9CBA-1019953F7F0E}.Release|x86.ActiveCfg = Release|Win32
+		{924C291B-F90D-4264-9CBA-1019953F7F0E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
