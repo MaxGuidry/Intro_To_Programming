@@ -1,34 +1,34 @@
 #include<iostream>
 
-char * Reverse(char *,int);
-char * PReverse(char *, int);
+int twoLargest(int *, int);
 
 int main()
 {
-	char letters[] = { "today" };
-	int size = 5;
-	std::cout << PReverse(letters,size) << std::endl;
+	int nums[10] = { 3,4,5,200,4,200,6,0,3,2 };
+	std::cout << twoLargest(nums, 10) << std::endl;
 	system("pause");
 	return 0;
 }
 
-char * Reverse(char * letters,int size)
+int twoLargest(int * array, int size)
 {
-	for (int i =1; i<= size/2; i++)
+	int largest =array[0];
+	int second;
+	if (largest > array[1])
 	{
-		char temp = letters[i-1];
-		letters[i-1] = letters[size-i];
-		letters[size - i] = temp;
+		second = array[1];
 	}
-	return letters;
-}
-char * PReverse(char* letters, int size)
-{
-	for (int i = 1; i <= size / 2; i++)
+	for (int i = 1; i < size; i++)
 	{
-		char temp = *(letters + i - 1);
-		*(letters + i - 1) = *(letters + size - i);
-		*(letters + size - i) = temp;
+		if (array[i] > largest)
+		{
+			second = largest;
+			largest = array[i];
+		}
+		else if (array[i] > second)
+		{
+			second = array[i];
+		}
 	}
-	return letters;
+	return largest + second;
 }
