@@ -1,34 +1,44 @@
 #include<iostream>
 
-int twoLargest(int *, int);
+class Cat
+{
+private:
+	char m_Name;
+public:
+	Cat() {}
+	void NameMe(char n)
+	{
+		m_Name = n;
+	}
+};
+void Naming(Cat*,int);
 
 int main()
 {
-	int nums[10] = { 3,4,5,200,4,200,6,0,3,2 };
-	std::cout << twoLargest(nums, 10) << std::endl;
+	Cat Cats[26];
+	int i = 0;
+	Naming(Cats,i);
+	/*Cat Cats[26];
+	int i = 0;
+	while (i < 26)
+	{
+		if (i % 2 == 0)
+		{
+			Cats[i].NameMe(i + 65);
+		}
+		else
+		{
+			Cats[i].NameMe(i + 97);
+		}
+		i++;
+	}*/
 	system("pause");
 	return 0;
 }
 
-int twoLargest(int * array, int size)
+void Naming(Cat *array,int count)
 {
-	int largest =array[0];
-	int second;
-	if (largest > array[1])
-	{
-		second = array[1];
-	}
-	for (int i = 1; i < size; i++)
-	{
-		if (array[i] > largest)
-		{
-			second = largest;
-			largest = array[i];
-		}
-		else if (array[i] > second)
-		{
-			second = array[i];
-		}
-	}
-	return largest + second;
+	(count % 2 == 0) ? array[count].NameMe(count + 65) : array[count].NameMe(count + 97);
+	if (count++ < 26)
+		Naming(array, count);
 }
