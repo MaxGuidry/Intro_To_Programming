@@ -1,44 +1,34 @@
 #include<iostream>
 
-class Cat
-{
-private:
-	char m_Name;
-public:
-	Cat() {}
-	void NameMe(char n)
-	{
-		m_Name = n;
-	}
-};
-void Naming(Cat*,int);
+int mostOften(int *,int);
 
 int main()
 {
-	Cat Cats[26];
-	int i = 0;
-	Naming(Cats,i);
-	/*Cat Cats[26];
-	int i = 0;
-	while (i < 26)
-	{
-		if (i % 2 == 0)
-		{
-			Cats[i].NameMe(i + 65);
-		}
-		else
-		{
-			Cats[i].NameMe(i + 97);
-		}
-		i++;
-	}*/
+	int nums[10] = { 1,2,3,3,2,4,5,2,7,2 };
+	mostOften(nums, 10);
 	system("pause");
 	return 0;
 }
 
-void Naming(Cat *array,int count)
+int mostOften(int * array, int size)
 {
-	(count % 2 == 0) ? array[count].NameMe(count + 65) : array[count].NameMe(count + 97);
-	if (count++ < 26)
-		Naming(array, count);
+	int mostNum;
+	int mosttimes = 0;
+	for (int i = 0; i < size; i++)
+	{
+		int numtimes=0;
+		for (int j = 0; j < size; j++)
+		{
+			if (array[i] == array[j])
+			{
+				numtimes++;
+				if (numtimes > mosttimes)
+				{
+					mostNum = array[j];
+					mosttimes = numtimes;
+				}
+			}
+		}
+	}
+	return mostNum;
 }
