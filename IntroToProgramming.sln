@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Inheritance", "Inheritance\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Text Files", "Text Files\Text Files.vcxproj", "{DE9C550C-9E29-4123-B90A-E14C04979E45}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Recursion", "Recursion\Recursion.vcxproj", "{77DEF291-7383-46EF-978F-7BAF8D6C9867}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{DE9C550C-9E29-4123-B90A-E14C04979E45}.Release|x64.Build.0 = Release|x64
 		{DE9C550C-9E29-4123-B90A-E14C04979E45}.Release|x86.ActiveCfg = Release|Win32
 		{DE9C550C-9E29-4123-B90A-E14C04979E45}.Release|x86.Build.0 = Release|Win32
+		{77DEF291-7383-46EF-978F-7BAF8D6C9867}.Debug|x64.ActiveCfg = Debug|x64
+		{77DEF291-7383-46EF-978F-7BAF8D6C9867}.Debug|x64.Build.0 = Debug|x64
+		{77DEF291-7383-46EF-978F-7BAF8D6C9867}.Debug|x86.ActiveCfg = Debug|Win32
+		{77DEF291-7383-46EF-978F-7BAF8D6C9867}.Debug|x86.Build.0 = Debug|Win32
+		{77DEF291-7383-46EF-978F-7BAF8D6C9867}.Release|x64.ActiveCfg = Release|x64
+		{77DEF291-7383-46EF-978F-7BAF8D6C9867}.Release|x64.Build.0 = Release|x64
+		{77DEF291-7383-46EF-978F-7BAF8D6C9867}.Release|x86.ActiveCfg = Release|Win32
+		{77DEF291-7383-46EF-978F-7BAF8D6C9867}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
