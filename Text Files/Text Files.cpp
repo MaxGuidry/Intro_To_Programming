@@ -11,7 +11,7 @@ int main()
 	file << stuff;
 	while (!file.eof())
 	{
-		std::cout << file << std::endl;
+		//std::cout << file << std::endl;
 	}
 	file.close();
 	system("pause");
