@@ -1,12 +1,12 @@
 #include<iostream>
+#include<Windows.h>
 int fibonacci(int);
 int power(int, int, int, int);
 int hanoi(int, int, int, int);
 
-
 int main()
 {
-	for (int i = 0; i < 30; i++)
+	for (int i = 0; i < 20; i++)
 	{
 		std::cout << fibonacci(i) << " ";
 	}
@@ -24,7 +24,6 @@ int fibonacci(int sequence)
 		return 1;
 	return fibonacci(sequence - 1) + fibonacci(sequence - 2);
 }
-
 
 int power(int base, int exponent, int count, int answer)
 {
@@ -44,6 +43,7 @@ int hanoi(int disc, int start, int mid, int last)
 	else
 	{
 		hanoi(disc - 1, start, last, mid);
+		//Sleep(105);
 		std::cout << "move disc " << disc << " from peg " << start << " to peg " << last << "\n";
 		hanoi(disc -1, mid, start , last);
 	}

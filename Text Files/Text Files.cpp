@@ -6,12 +6,11 @@ int main()
 {
 	std::fstream file;
 	file.open("cancer.txt", std::ios_base::out);
-	std::string stuff;	
-	std::getline(std::cin, stuff);
-	file << stuff;
+	std::string harambe;
 	while (!file.eof())
 	{
-		//std::cout << file << std::endl;
+		file >> harambe;
+		std::cout << harambe;
 	}
 	file.close();
 	system("pause");
