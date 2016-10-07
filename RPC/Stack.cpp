@@ -1,8 +1,8 @@
 #include "Stack.h"
 
-Stack::Stack(int)
+Stack::Stack(int size)
 {
-
+	m_MaxSize = size;
 }
 
 void Stack::pop()
@@ -30,8 +30,12 @@ void Stack::initializeStack(std::string stuff)
 
 bool Stack::isFullStack()
 {
-
-	return false;
+	if (m_data.length() >= m_MaxSize)
+	{
+		return true;
+	}
+	else
+		return false;
 }
 
 bool Stack::isEmpty()
