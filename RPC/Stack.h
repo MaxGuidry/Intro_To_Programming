@@ -1,8 +1,9 @@
 #pragma once
 #include<string>
-class stack 
+class Stack 
 {
 public:
+	Stack(int);
 	void pop();
 	char top();
 	void push(char);
@@ -10,6 +11,7 @@ public:
 	bool isFullStack();
 	bool isEmpty();
 private:
+	int m_MaxSize;
 	int m_topIndex;
-	std::string m_data = new char;
+	std::string m_data;
 };

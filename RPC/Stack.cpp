@@ -1,35 +1,40 @@
 #include "Stack.h"
 
-void stack::pop()
+Stack::Stack(int)
+{
+
+}
+
+void Stack::pop()
 {
 	m_data[m_topIndex] = '\0';
 	m_topIndex = m_data.length() - 1;
 }
 
-char stack::top()
+char Stack::top()
 {
 	return m_data[m_topIndex];
 }
 
-void stack::push(char stuff)
+void Stack::push(char stuff)
 {
 	m_data[m_topIndex + 1] = stuff;
 	m_topIndex = m_data.length();
 }
 
-void stack::initializeStack(std::string stuff)
+void Stack::initializeStack(std::string stuff)
 {
 	m_data = stuff;
 	m_topIndex = m_data.length() - 1;
 }
 
-bool stack::isFullStack()
+bool Stack::isFullStack()
 {
 
 	return false;
 }
 
-bool stack::isEmpty()
+bool Stack::isEmpty()
 {
 	if (m_topIndex == -1)
 	{
