@@ -24,7 +24,10 @@ void Stack::push(char stuff)
 
 void Stack::initializeStack(std::string stuff)
 {
-	m_data = stuff;
+	for (int i = m_data.size(); i < m_MaxSize; i++)
+	{
+		m_data[i]=stuff[i]	//TODO
+	}
 	m_topIndex = m_data.length() - 1;
 }
 

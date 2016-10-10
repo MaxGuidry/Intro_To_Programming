@@ -4,12 +4,13 @@
 
 int main()
 {
-	std::string stuff;
-	std::getline(std::cin , stuff);
-	Stack test;
-	test.initializeStack(stuff);
-	test.push('z');
-	test.pop();
+
+	Stack mathStack = Stack::Stack(3);
+	std::cout << "Enter equation in reverse polish notation.\n";
+	std::string equation;
+	std::getline(std::cin, equation);
+	mathStack.initializeStack(equation);
+
 	system("pause");
 	return 0;
 }
