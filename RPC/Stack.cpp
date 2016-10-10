@@ -3,31 +3,34 @@
 Stack::Stack(int size)
 {
 	m_MaxSize = size;
+	m_topIndex = -1;
 }
 
 void Stack::pop()
 {
 	m_data[m_topIndex] = '\0';
-	m_topIndex = m_data.length() - 1;
+	m_topIndex--;
 }
 
 char Stack::top()
 {
-	return m_data[m_topIndex];
+	if (m_topIndex == -1)
+		return m_data[m_topIndex + 1];
+	else
+		return m_data[m_topIndex];
 }
 
-void Stack::push(char stuff)
+void Stack::push(char thing)
 {
-	m_data[m_topIndex + 1] = stuff;
-	m_topIndex = m_data.length();
+	m_data.append(&thing);
+	//m_data[m_topIndex + 1] = thing;
+	//m_data[m_topIndex + 2] = '\0';
+	m_topIndex++;
 }
 
 void Stack::initializeStack(std::string stuff)
 {
-	for (int i = m_data.size(); i < m_MaxSize; i++)
-	{
-		m_data[i]=stuff[i]	//TODO
-	}
+	m_data = stuff;
 	m_topIndex = m_data.length() - 1;
 }
 
