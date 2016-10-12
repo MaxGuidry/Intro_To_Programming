@@ -9,7 +9,6 @@ Stack::Stack(int size)
 void Stack::pop()
 {
 	m_data.resize(m_data.length() - 1);
-	//m_data[m_topIndex] = '\0';
 	m_topIndex--;
 }
 

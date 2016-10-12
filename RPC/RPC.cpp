@@ -2,6 +2,7 @@
 #include<Windows.h>
 #include<string>
 #include"Stack.h"
+int convertToInt(char);
 
 int main()
 {
@@ -54,4 +55,15 @@ int main()
 	std::cout << "math solved.\n";
 	system("pause");
 	return 0;
+}
+
+int convertToInt(char thing)
+{
+
+}
+
+
+int calculateLargeNumber(Stack number)
+{
+
 }
