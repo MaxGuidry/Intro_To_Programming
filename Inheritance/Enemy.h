@@ -5,7 +5,6 @@
 class Animal
 {
 public:
-	Animal() {}
 	virtual void speak()=0;
 };
 
