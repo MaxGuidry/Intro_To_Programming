@@ -8,7 +8,8 @@ Stack::Stack(int size)
 
 void Stack::pop()
 {
-	m_data[m_topIndex] = '\0';
+	m_data.resize(m_data.length() - 1);
+	//m_data[m_topIndex] = '\0';
 	m_topIndex--;
 }
 
@@ -23,8 +24,6 @@ char Stack::top()
 void Stack::push(char thing)
 {
 	m_data.append(&thing);
-	//m_data[m_topIndex + 1] = thing;
-	//m_data[m_topIndex + 2] = '\0';
 	m_topIndex++;
 }
 
