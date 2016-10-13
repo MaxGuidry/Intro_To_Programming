@@ -8,6 +8,7 @@ char convertToChar(int);
 void calculateNumber(Stack&);
 int main()
 {
+	int test = pow(2, 5);
 	Stack mathStack = Stack::Stack(3);
 	std::cout << "Enter equation in reverse polish notation.\n";
 	std::string equation;
@@ -108,14 +109,8 @@ void calculateNumber(Stack &numbers)
 		digits++;
 	}
 	Stack temp = Stack(digits);
-	int numOfTimes = 0;
 	while (temp.isFullStack() == false)
 	{
-		
-		for (int i = pow(10, digits); i < numOfTimes; i /= 10)
-		{
-			
-		}
-		numOfTimes++;
+		//for(int i =pow(10,digits);i<0;i
 	}
 }
