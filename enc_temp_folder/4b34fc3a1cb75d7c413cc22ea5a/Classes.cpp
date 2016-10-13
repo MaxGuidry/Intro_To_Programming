@@ -35,7 +35,7 @@ public:
 
 int main()
 {
-	/*asd
+	/*
 		Zombie Donray{ 100,5,"Bad Programmer", "Donray" };
 		Zombie Max{ 200,20,"Good Programmer", "Max" };
 		for (int Turns = 1; Turns < 6; Turns++)
@@ -47,13 +47,13 @@ int main()
 		test.addItem(book);
 		*/
 
-		/*student Max = student( "Max", 18 );
-		student Donray = student("Donray", 90);
-		student students[2] = { Max, Donray };
-		swap(students[0], students[1]);*/
+	/*student Max = student( "Max", 18 );
+	student Donray = student("Donray", 90);
+	student students[2] = { Max, Donray };
+	swap(students[0], students[1]);*/
 
 
-	int num = Math::add(1, 2);
+	int num=Math::add(1, 2);
 	system("pause");
 	return 0;
 }
