@@ -13,15 +13,16 @@ int main()
 	std::cout << "Enter equation in reverse polish notation.\n";
 	std::string equation;
 	std::getline(std::cin, equation);
-	for (int i = 0; i<equation.length(); i++)//TODO make program work when numbers larger than 9 are entered------use spaces as seperation for numbers and-------to use large numbers-||if 14 is entered program will take 1*10 + 4 and use 14 to calculate the rest of the number then do reverse to seperate them|
+	for (int i = 0; i < equation.length(); i++)
 	{
 		mathStack.push(equation[i]);
 		int dis = convertToInt(mathStack.top());
-		if (mathStack.top() == '+'||mathStack.top()=='-' || mathStack.top() == '*' || mathStack.top() == '/')
+		if (mathStack.top() == '+' || mathStack.top() == '-' || mathStack.top() == '*' || mathStack.top() == '/' || mathStack.top() == '%')
 		{
 			calculateNumber(mathStack);
 		}
-		
+
+
 	}
 	mathStack.printStack();
 	std::cout << "math solved.\n";
@@ -43,7 +44,10 @@ char convertToChar(int thing)
 
 void calculateNumber(Stack &numbers)
 {
+	int stored;
+	int counter = 0;
 	int answer = 0;
+	int actualNum;
 	char operation = numbers.top();
 	numbers.pop();
 	while (numbers.isEmpty() == false)
@@ -51,7 +55,7 @@ void calculateNumber(Stack &numbers)
 		if (numbers.top() == ' ')
 		{
 			numbers.pop();
-			int actualNum = 0;
+			actualNum = 0;
 			int place = 1;
 			while (numbers.top() != ' '&&numbers.isEmpty() == false)
 			{
@@ -60,23 +64,35 @@ void calculateNumber(Stack &numbers)
 				place *= 10;
 				numbers.pop();
 			}
-			int stored = actualNum;
-
-			if (operation == '+')
-			{
-				answer += actualNum;
-			}
-			if (operation == '-')
-			{
-				answer;
-
-			}
+			if (counter == 0)
+				stored = actualNum;
+			counter++;
 		}
 	}
-	int digits = 1;
+	if (operation == '+')
+	{
+		answer = stored + actualNum;
+	}
+	if (operation == '-')
+	{
+		answer = actualNum - stored;
+	}
+	if (operation == '*')
+	{
+		answer = actualNum*stored;
+	}
+	if (operation == '/')
+	{
+		answer = actualNum / stored;
+	}
+	if (operation == '%')
+	{
+		answer = actualNum % stored;
+	}
+		int digits = 1;
 	for (int i = 1;; i *= 10)
 	{
-		if (answer / i <= 10 && answer / i >= 1)
+		if (answer / i < 10 && answer / i >= 1)
 		{
 			break;
 		}
