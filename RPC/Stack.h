@@ -10,6 +10,7 @@ public:
 	void initializeStack(std::string);
 	bool isFullStack();
 	bool isEmpty();
+	void printStack();
 private:
 	int m_MaxSize;
 	int m_topIndex;

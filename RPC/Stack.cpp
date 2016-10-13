@@ -1,4 +1,5 @@
 #include "Stack.h"
+#include <iostream>
 
 Stack::Stack(int size)
 {
@@ -50,4 +51,9 @@ bool Stack::isEmpty()
 	}
 	else
 		return false;
+}
+
+void Stack::printStack()
+{
+	std::cout << m_data << std::endl;
 }
