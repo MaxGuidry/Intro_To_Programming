@@ -143,10 +143,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Classes.cpp" />
-    <ClCompile Include="ClassFile.cpp" />
+    <ClCompile Include="PracticeClass.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ClassFile.h" />
+    <ClInclude Include="PracticeClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
