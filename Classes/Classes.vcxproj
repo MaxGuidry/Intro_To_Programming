@@ -143,7 +143,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Classes.cpp" />
-    <ClCompile Include="PracticeClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PracticeClass.h" />

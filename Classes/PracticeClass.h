@@ -10,3 +10,10 @@ public:
 	Item(std::string name) :m_name(name) {};
 	std::string m_name;
 };
+
+bool Item::operator ==(const Item& theItem)const
+{
+	if (m_name == theItem.m_name)
+		return true;
+	return false;
+}
