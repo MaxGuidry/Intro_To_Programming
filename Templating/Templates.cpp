@@ -18,9 +18,10 @@ T Min(T a, T b)
 template<typename T>
 T Max(T a, T b)
 {
-	T thing;
+	/*T thing;
 	(a > b) ? thing = a : thing = b;
-	return thing;
+	return thing;*/
+	return (a > b) ? a : b;
 }
 
 //DESCRIPTION: Constrains a value within the range of two other values.
