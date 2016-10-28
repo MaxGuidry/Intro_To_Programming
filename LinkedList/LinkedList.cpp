@@ -17,7 +17,8 @@ int main()
 	test->Add(2);
 	test->Add(5);
 	test->Add(9);
-
+	test->Add(1);
+	test->print();
 	system("pause");
 	return 0;
 }

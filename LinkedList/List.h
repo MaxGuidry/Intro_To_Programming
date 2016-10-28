@@ -10,7 +10,7 @@ public:
 	{
 		if (count == 0)
 		{
-			first->info=node;
+			first->info = node;
 			first->link = nullptr;
 			last->info = node;
 			last->link = nullptr;
@@ -18,15 +18,18 @@ public:
 		}
 		else
 		{
-			const Type * temp = &node;
-			last = temp;
+			nodeType<Type> *newNode = new nodeType<Type>;
+			last->link = newNode;
+			last = newNode;
+			if (count == 1)
+				first->link = newNode;
 			last->info = node;
 			last->link = nullptr;
 			count++;
 		}
 		return true;
 	}
-	LinkedList() 
+	LinkedList()
 	{
 		first = new nodeType<Type>;
 		last = new nodeType<Type>;
@@ -41,10 +44,26 @@ public:
 
 	}
 	void print()
-	{
 
+	{
+		//WRONG BUT WORKS
+		nodeType<Type> * temp = new nodeType<Type>;
+		int counter = 0;
+		for (; temp != NULL; counter++)
+		{
+			if (counter == 0)
+			{
+				temp = first;
+			}
+			else
+			{
+				temp = temp->link;
+			}
+			if (temp != nullptr)
+				std::cout << temp->info;
+		}
 	}
-protected: 
+protected:
 	int count;
 	nodeType<Type> *first;
 	nodeType<Type> * last;
