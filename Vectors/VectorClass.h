@@ -1,5 +1,4 @@
 #pragma once
-#include<math.h>
 
 class Vector2
 {
@@ -17,7 +16,6 @@ public:
 	Vector2 ScalarMult(float Scalar)
 	{
 		return Vector2(x*Scalar, y*Scalar);
-
 	}
 private:
 	float x, y;
@@ -28,14 +26,6 @@ class Vector3
 public:
 	Vector3() {}
 	Vector3<T>(T xpos, T ypos, T zpos) :x(xpos), y(ypos), z(zpos) {}
-	Vector3 Add(const Vector3<T> &B)
-	{
-		return Vector3(x + B.x, y + B.y, z + B.z);
-	}
-	Vector3 Subtract(const Vector3 &B)
-	{
-		return Vector3(x - B.x, y - B.y, z - B.z);
-	}
 	Vector3 ScalarMult(T Scalar)
 	{
 		return Vector3(x*Scalar, y*Scalar, z*Scalar);
