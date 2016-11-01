@@ -95,7 +95,6 @@ public:
 	LinkedListIterator(nodeType<Type> a) :current(&a) {}
 	Type operator*	()
 	{
-
 	}
 	LinkedListIterator<Type> operator++()
 	{
