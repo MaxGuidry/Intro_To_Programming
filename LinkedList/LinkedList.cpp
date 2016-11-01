@@ -18,7 +18,8 @@ int main()
 	test->Add(5);
 	test->Add(9);
 	test->Add(1);
-	test->print();
+	const int i=test->length();
+	std::cout << i << std::endl;
 	system("pause");
 	return 0;
 }

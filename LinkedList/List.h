@@ -3,6 +3,9 @@ template<typename Type>
 struct nodeType;
 
 template<typename Type>
+class LinkedListIterator;
+
+template<typename Type>
 class LinkedList
 {
 public:
@@ -37,11 +40,18 @@ public:
 	}
 	const Type front()
 	{
-
+		return last->info;
 	}
 	const int length()
 	{
-
+		LinkedListIterator<Type> * temp = new LinkedListIterator<Type>(*first);
+		int i = 0;
+		while (temp!=NULL)
+		{
+			temp++;
+			i++;
+		}
+		return i;
 	}
 	void print()
 
@@ -74,4 +84,29 @@ struct nodeType
 public:
 	Type info;
 	nodeType<Type> * link;
+};
+template<typename Type>
+class LinkedListIterator
+{
+private:
+	nodeType<Type> * current;
+public:
+	LinkedListIterator() {}
+	LinkedListIterator(nodeType<Type> a) :current(&a) {}
+	Type operator*	()
+	{
+
+	}
+	LinkedListIterator<Type> operator++()
+	{
+		current = current->link;
+	}
+	bool operator==(const LinkedListIterator<Type>& a)
+	{
+		return (current->info == a->current->info) ? true : false;
+	}
+	bool operator!=(const LinkedListIterator<Type>&)
+	{
+		return (current->info != a->current->info) ? true : false;
+	}
 };

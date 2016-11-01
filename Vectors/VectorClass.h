@@ -1,24 +1,41 @@
 #pragma once
 
-class Vector2
+template <class T>
+class Vector2D
 {
 public:
-	Vector2() {}
-	Vector2(float xpos, float ypos) :x(xpos), y(ypos) {}
-	Vector2 Add(const Vector2 &B)
+	Vector2D() {};
+	Vector2D<T>(T xx, T yy) : x(xx), y(yy) {}
+	bool operator == (const Vector2D<T> &A)
 	{
-		return Vector2(x + B.x, y + B.y);
+		return x == A.x && y == A.y;
 	}
-	Vector2 Subtract(const Vector2 &B)
+	Vector2D<T> operator +(const Vector2D<T> &A)
 	{
-		return Vector2(x - B.x, y - B.y);
+		return Vector2D(x + A.x, y + A.y);
 	}
-	Vector2 ScalarMult(float Scalar)
+	Vector2D<T> operator -(const Vector2D<T> &A)
 	{
-		return Vector2(x*Scalar, y*Scalar);
+		return Vector2D(x - A.x, y - A.y);
+	}
+	Vector2D<T> operator *(T Mult)
+	{
+		return Vector2D(x * Mult, y * Mult);
+	}
+	T Magnitude()
+	{
+		return sqrt((x*x) + (y*y));
+	}
+	Vector2D<T> Normalize()
+	{
+		return Vector2D(x / Magnitude(), y / Magnitude());
+	}
+	T DotProduct(const Vector2D<T> &A)
+	{
+		return (x * A.x) + (y * A.y);
 	}
 private:
-	float x, y;
+	T x, y;
 };
 template<typename T>
 class Vector3
