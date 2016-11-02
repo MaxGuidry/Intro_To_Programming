@@ -14,12 +14,13 @@ int main()
 	head = &c;
 	list(head);*/
 	LinkedList<int> *test = new LinkedList<int>();
-	test->Add(2);
-	test->Add(5);
-	test->Add(9);
-	test->Add(1);
-	const int i=test->length();
-	std::cout << i << std::endl;
+	test->insertBack(2);
+	test->insertBack(5);
+	test->insertBack(9);
+	test->insertBack(1);
+	test->insertFirst(4);
+	test->front();
+	LinkedListIterator<int> temp = LinkedListIterator<int>(test->begin());
 	system("pause");
 	return 0;
 }

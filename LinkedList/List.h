@@ -1,4 +1,5 @@
 #pragma once
+#include<cassert>
 template<typename Type>
 struct nodeType;
 
@@ -9,7 +10,11 @@ template<typename Type>
 class LinkedList
 {
 public:
-	bool Add(const Type& node)
+	void initializeList()
+	{
+
+	}
+	void insertBack(const Type& node)
 	{
 		if (count == 0)
 		{
@@ -30,7 +35,25 @@ public:
 			last->link = nullptr;
 			count++;
 		}
-		return true;
+	}
+	void insertFirst(const Type & node)
+	{
+		if (count == 0)
+		{
+			first->info = node;
+			first->link = nullptr;
+			last->info = node;
+			last->link = nullptr;
+			count++;
+		}
+		else
+		{
+			nodeType<Type> *newNode = new nodeType<Type>;
+			newNode->link = first->link;
+			first = newNode;
+			first->info = node;
+			count++;
+		}
 	}
 	LinkedList()
 	{
@@ -38,23 +61,30 @@ public:
 		last = new nodeType<Type>;
 		count = 0;
 	}
-	const Type front()
+	Type front() const
 	{
+		assert(count != 0);
+		return first->info;
+	}
+	Type back() const
+	{
+		assert(count != 0);
 		return last->info;
 	}
+	LinkedListIterator<Type> begin()
+	{
+		return LinkedListIterator<Type>(first);
+	}
+	LinkedListIterator<Type> end()
+	{
+		return LinkedListIterator<Type>(last->link);
+	}
+
 	const int length()
 	{
-		LinkedListIterator<Type> * temp = new LinkedListIterator<Type>(*first);
-		int i = 0;
-		while (temp!=NULL)
-		{
-			temp++;
-			i++;
-		}
-		return i;
+		return count;
 	}
 	void print()
-
 	{
 		//WRONG BUT WORKS
 		nodeType<Type> * temp = new nodeType<Type>;
@@ -92,20 +122,23 @@ private:
 	nodeType<Type> * current;
 public:
 	LinkedListIterator() {}
-	LinkedListIterator(nodeType<Type> a) :current(&a) {}
+	LinkedListIterator(nodeType<Type> *a) :current(a) {}
 	Type operator*	()
 	{
+		return current->info;
 	}
 	LinkedListIterator<Type> operator++()
 	{
 		current = current->link;
+		return *this;
 	}
 	bool operator==(const LinkedListIterator<Type>& a)
 	{
-		return (current->info == a->current->info) ? true : false;
+		return (current == a.current) ? true : false;
 	}
-	bool operator!=(const LinkedListIterator<Type>&)
+	bool operator!=(const LinkedListIterator<Type>& a)
 	{
-		return (current->info != a->current->info) ? true : false;
+
+		return (current != a.current) ? true : false;
 	}
 };
