@@ -3,24 +3,20 @@
 void list(nodeType<int> *);
 int main()
 {
-	/*nodeType<int> * head;
-	nodeType<int> a, b, c;
-	c.info = 4;
-	b.info = 2;
-	a.info = 0;
-	c.link = &b;
-	b.link = &a;
-	a.link = NULL;
-	head = &c;
-	list(head);*/
-	LinkedList<int> *test = new LinkedList<int>();
+	
+	linkedListType<int> *test = new linkedListType<int>();
+	linkedListType<int> *second = new linkedListType<int>();
 	test->insertBack(2);
 	test->insertBack(5);
 	test->insertBack(9);
 	test->insertBack(1);
 	test->insertFirst(4);
+	*second = *test;
+	second->print();
 	test->front();
-	LinkedListIterator<int> temp = LinkedListIterator<int>(test->begin());
+	LinkedListIterator<int> temp =LinkedListIterator<int>(test->begin());
+	bool d=test->search(7);
+	test->destroyList();
 	system("pause");
 	return 0;
 }
