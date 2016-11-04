@@ -12,29 +12,8 @@ class linkedListType
 public:
 	const linkedListType<Type>& operator= (const linkedListType<Type>& otherList)
 	{
-
-		linkedListType<Type> * temp = new linkedListType<Type>;
-		for (int i = 0; i < otherList.count; i++)
-		{
-			if (i == 0)
-			{
-				temp->first->info = node;
-				temp->first->link = nullptr;
-				temp->last->info = node;
-				temp->last->link = nullptr;
-			}
-			else
-			{
-				nodeType<Type> *newNode = new nodeType<Type>;
-				last->link = newNode;
-				last = newNode;
-				if (count == 1)
-					first->link = newNode;
-				last->info = node;
-				last->link = nullptr;
-			}
-		}
-		return
+		copyList(otherList);
+		return *this;
 	}
 
 		void initializeList()
@@ -159,9 +138,23 @@ public:
 			last = NULL;
 			count = 0;
 		}
-		void deleteNode()
+		void deleteNode(const Type &nodeInfo)
 		{
+			nodeType<Type> *temp = first;
+			if (temp->info == nodeInfo)
+			{
 
+			}
+			while (temp->link->info != nodeInfo)
+			{
+				temp = temp->link;
+			}
+			if (temp->link->info == nodeInfo)
+			{
+				nodeType<Type> * tmp = temp->link;
+				temp->link = temp->link->link;
+				delete tmp;
+			}
 		}
 		/*linkedListType(const linkedListType<Type>otherList)
 		{
@@ -179,6 +172,8 @@ public:
 		void copyList(const linkedListType<Type>&otherList)
 		{
 			first = otherList.first;
+			last = otherList.last;
+			count = otherList.count;
 		}
 	};
 	template<typename Type>

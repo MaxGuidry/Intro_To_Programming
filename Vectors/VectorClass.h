@@ -37,6 +37,7 @@ public:
 private:
 	T x, y;
 };
+
 template<typename T>
 class Vector3
 {

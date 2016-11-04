@@ -11,7 +11,8 @@ int main()
 	test->insertBack(9);
 	test->insertBack(1);
 	test->insertFirst(4);
-	*second = *test;
+	test->deleteNode(9);
+	*second=*test;
 	second->print();
 	test->front();
 	LinkedListIterator<int> temp =LinkedListIterator<int>(test->begin());

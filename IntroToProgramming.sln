@@ -43,6 +43,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Vectors", "Vectors\Vectors.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedList", "LinkedList\LinkedList.vcxproj", "{76AC1533-04CF-409B-BA0A-C7AAB03A544C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MathLibrary", "MathLibrary\MathLibrary.vcxproj", "{4484A759-1430-4EBA-A5A5-90D4B597C42E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -211,6 +213,14 @@ Global
 		{76AC1533-04CF-409B-BA0A-C7AAB03A544C}.Release|x64.Build.0 = Release|x64
 		{76AC1533-04CF-409B-BA0A-C7AAB03A544C}.Release|x86.ActiveCfg = Release|Win32
 		{76AC1533-04CF-409B-BA0A-C7AAB03A544C}.Release|x86.Build.0 = Release|Win32
+		{4484A759-1430-4EBA-A5A5-90D4B597C42E}.Debug|x64.ActiveCfg = Debug|x64
+		{4484A759-1430-4EBA-A5A5-90D4B597C42E}.Debug|x64.Build.0 = Debug|x64
+		{4484A759-1430-4EBA-A5A5-90D4B597C42E}.Debug|x86.ActiveCfg = Debug|Win32
+		{4484A759-1430-4EBA-A5A5-90D4B597C42E}.Debug|x86.Build.0 = Debug|Win32
+		{4484A759-1430-4EBA-A5A5-90D4B597C42E}.Release|x64.ActiveCfg = Release|x64
+		{4484A759-1430-4EBA-A5A5-90D4B597C42E}.Release|x64.Build.0 = Release|x64
+		{4484A759-1430-4EBA-A5A5-90D4B597C42E}.Release|x86.ActiveCfg = Release|Win32
+		{4484A759-1430-4EBA-A5A5-90D4B597C42E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
