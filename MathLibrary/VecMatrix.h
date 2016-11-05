@@ -240,7 +240,7 @@ public:
 		//THIRD AND FINAL ATTEMPT(WORKS) 
 		for (int i = 0; i < 27; i++)
 		{
-			temp.mat3[i / 9][(i % 9) / 3] += mat3[i / 9][i % 3] * mat.mat3[i % 3][(i % 9)/3];
+			temp.mat3[i / 9][(i % 9) / 3] += mat3[(i / 9)][i % 3] * mat.mat3[i % 3][(i % 9)/3];
 		}
 		return temp;
 	}
