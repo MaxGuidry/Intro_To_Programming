@@ -229,11 +229,11 @@ public:
 				}
 			}
 		}*/
-		for (int i = 1; i < 4; i++)
+		for (int i = 0; i < 3; i++)
 		{
-			for (int j = 1; j < 10; j++)
+			for (int j = 0; j < 9; j++)
 			{
-				temp.mat3[j%3][j%i] += mat3[i-1][j%3] * mat.mat3[i-1][j%3];
+				temp.mat3[i][j/3] += mat3[i][j%3] * mat.mat3[j%3][j/3];
 			}
 		}
 		return temp;
