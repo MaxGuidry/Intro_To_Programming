@@ -218,7 +218,7 @@ public:
 	Mat3 operator *(const Mat3 &mat)
 	{
 		Mat3 temp = Mat3(0, 0, 0, 0, 0, 0, 0, 0, 0);
-		//FIRST ATTEMPT(WORKS)
+
 		/*for (int i = 0; i < 3; i++)
 		{
 			for (int j = 0; j < 3; j++)
@@ -229,7 +229,7 @@ public:
 				}
 			}
 		}*/
-		//SECOND ATTEMPT(WORKS)
+
 		/*for (int i = 0; i < 3; i++)
 		{
 			for (int j = 0; j < 9; j++)
@@ -237,7 +237,6 @@ public:
 				temp.mat3[i][j/3] += mat3[i][j%3] * mat.mat3[j%3][j/3];
 			}
 		}*/
-		//THIRD AND FINAL ATTEMPT(WORKS) 
 		for (int i = 0; i < 27; i++)
 		{
 			temp.mat3[i / 9][(i % 9) / 3] += mat3[i / 9][i % 3] * mat.mat3[i % 3][(i % 9)/3];
