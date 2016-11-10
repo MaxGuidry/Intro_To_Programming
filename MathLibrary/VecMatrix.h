@@ -14,15 +14,18 @@ public:
 	}
 	Vector2 operator +(const Vector2 &A)
 	{
-		return Vector2(x + A.x, y + A.y);
+		Vector2 temp = Vector2(x + A.x, y + A.y);
+		return temp;
 	}
 	Vector2 operator -(const Vector2 &A)
 	{
-		return Vector2(x - A.x, y - A.y);
+		Vector2 temp = Vector2(x - A.x, y - A.y);
+		return temp;
 	}
 	Vector2 operator *(float Mult)
 	{
-		return Vector2(x * Mult, y * Mult);
+		Vector2 temp = Vector2(x * Mult, y * Mult);
+		return temp;
 	}
 	float Magnitude()
 	{
@@ -30,7 +33,8 @@ public:
 	}
 	Vector2 Normalize()
 	{
-		return Vector2(x / Magnitude(), y / Magnitude());
+		Vector2 temp = Vector2(x / Magnitude(), y / Magnitude());
+		return temp;
 	}
 	float DotProduct(const Vector2 &A)
 	{
@@ -51,7 +55,8 @@ public:
 	}
 	Vector3 ScalarMult(float Scalar)
 	{
-		return Vector3(x*Scalar, y*Scalar, z*Scalar);
+		Vector3 temp = Vector3(x*Scalar, y*Scalar, z*Scalar);
+		return temp;
 	}
 	float Magnitude()
 	{
@@ -59,7 +64,8 @@ public:
 	}
 	Vector3 Normalize()
 	{
-		return Vector3(x / Magnitude(), y / Magnitude(), z / Magnitude());
+		Vector3 temp = Vector3(x / Magnitude(), y / Magnitude(), z / Magnitude());
+		return temp;
 	}
 	float DotProduct(const Vector3 &B)
 	{
@@ -67,15 +73,18 @@ public:
 	}
 	Vector3 CrossProduct(const Vector3 &B)
 	{
-		return Vector3((y*B.z) - (z*B.y), (x*B.z) - (z*B.x), (x*B.y) - (y*B.x));
+		Vector3 temp = Vector3((y*B.z) - (z*B.y), (x*B.z) - (z*B.x), (x*B.y) - (y*B.x));
+		return temp;
 	}
 	Vector3 operator +(const Vector3 &B)
 	{
-		return Vector3(x + B.x, y + B.y, z + B.z);
+		Vector3 temp = Vector3(x + B.x, y + B.y, z + B.z);
+		return temp;
 	}
 	Vector3 operator -(const Vector3 &B)
 	{
-		return Vector3(x - B.x, y - B.y, z - B.z);
+		Vector3 temp = Vector3(x - B.x, y - B.y, z - B.z);
+		return temp;
 	}
 	bool operator==(const Vector3 &B)
 	{
@@ -89,10 +98,18 @@ class Vector4
 {
 public:
 	Vector4() {}
-	Vector4(float xpos, float ypos, float zpos, float wpos) :x(xpos), y(ypos), z(zpos), w(wpos) {}
+	Vector4(float xpos, float ypos, float zpos, float wpos) :x(xpos), y(ypos), z(zpos), w(wpos)
+	{
+		VecArray[0] = xpos;
+		VecArray[1] = ypos;
+		VecArray[2] = zpos;
+		VecArray[3] = wpos;
+	}
+
 	Vector4 operator*(float scalar)
 	{
-		return Vector4(x*scalar, y*scalar, z*scalar, w*scalar);
+		Vector4 temp = Vector4(x*scalar, y*scalar, z*scalar, w*scalar);
+		return temp;
 	}
 	float Magnitude()
 	{
@@ -100,7 +117,8 @@ public:
 	}
 	Vector4 Normalize()
 	{
-		return Vector4(x / Magnitude(), y / Magnitude(), z / Magnitude(), w / Magnitude());
+		Vector4 temp = Vector4(x / Magnitude(), y / Magnitude(), z / Magnitude(), w / Magnitude());
+		return temp;
 	}
 	float DotProduct(const Vector4 &B)
 	{
@@ -108,17 +126,19 @@ public:
 	}
 	Vector4 operator +(const Vector4 &B)
 	{
-		return Vector4(x + B.x, y + B.y, z + B.z, w + B.w);
+		Vector4 temp = Vector4(x + B.x, y + B.y, z + B.z, w + B.w);
+		return temp;
 	}
 	Vector4 operator -(const Vector4 &B)
 	{
-		return Vector4(x - B.x, y - B.y, z - B.z, w - B.w);
+		Vector4 temp = Vector4(x - B.x, y - B.y, z - B.z, w - B.w);
+		return temp;
 	}
 	bool operator==(const Vector4 &B)
 	{
 		return x == B.x&&y == B.y&&z == B.z&&w == B.w;
 	}
-private:
+	float VecArray[4];
 	float x, y, z, w;
 };
 
@@ -153,13 +173,15 @@ public:
 			}
 		}
 	}
-	Vector2 operator *(const Vector2 &vec)
+	Vector2 operator *(const Vector2 &vec)const
 	{
-		return Vector2(vec.x*mat2[0][0] + vec.y*mat2[0][1], vec.x*mat2[1][0] + vec.y*mat2[1][1]);
+		Vector2 temp = Vector2(vec.x*mat2[0][0] + vec.y*mat2[0][1], vec.x*mat2[1][0] + vec.y*mat2[1][1]);
+		return temp;
 	}
 	Mat2 operator *(const Mat2 &mat)
 	{
-		return Mat2(mat2[0][0] * mat.mat2[0][0] + mat2[0][1] * mat.mat2[1][0], mat2[0][0] * mat.mat2[0][1] + mat2[0][1] * mat.mat2[1][1], mat2[1][0] * mat.mat2[0][0] + mat2[1][1] * mat.mat2[1][0], mat2[1][0] * mat.mat2[0][1] + mat2[1][1] * mat.mat2[1][1]);
+		Mat2 temp = Mat2(mat2[0][0] * mat.mat2[0][0] + mat2[0][1] * mat.mat2[1][0], mat2[0][0] * mat.mat2[0][1] + mat2[0][1] * mat.mat2[1][1], mat2[1][0] * mat.mat2[0][0] + mat2[1][1] * mat.mat2[1][0], mat2[1][0] * mat.mat2[0][1] + mat2[1][1] * mat.mat2[1][1]);
+		return temp;
 	}
 private:
 	float mat2[2][2];
@@ -190,7 +212,6 @@ public:
 		mat3[2][0] = g;
 		mat3[2][1] = h;
 		mat3[2][2] = i;
-
 	}
 	void print()
 	{
@@ -218,6 +239,7 @@ public:
 	Mat3 operator *(const Mat3 &mat)
 	{
 		Mat3 temp = Mat3(0, 0, 0, 0, 0, 0, 0, 0, 0);
+
 		//FIRST ATTEMPT(WORKS)
 		/*for (int i = 0; i < 3; i++)
 		{
@@ -229,6 +251,7 @@ public:
 				}
 			}
 		}*/
+
 		//SECOND ATTEMPT(WORKS)
 		/*for (int i = 0; i < 3; i++)
 		{
@@ -237,12 +260,31 @@ public:
 				temp.mat3[i][j/3] += mat3[i][j%3] * mat.mat3[j%3][j/3];
 			}
 		}*/
+
 		//THIRD AND FINAL ATTEMPT(WORKS) 
 		for (int i = 0; i < 27; i++)
 		{
-			temp.mat3[i / 9][(i % 9) / 3] += mat3[(i / 9)][i % 3] * mat.mat3[i % 3][(i % 9)/3];
+			temp.mat3[i / 9][(i % 9) / 3] += mat3[(i / 9)][i % 3] * mat.mat3[i % 3][(i % 9) / 3];
 		}
 		return temp;
+	}
+	Mat3 setRotateX(float angle)
+	{
+		Mat3 RotationalX = Mat3(1, 0, 0, 0, cos(angle), -sin(angle), 0, sin(angle), cos(angle));
+		*this = *this*RotationalX;
+		return *this;
+	}
+	Mat3 setRotateY(float angle)
+	{
+		Mat3 RotationalY = Mat3(cos(angle), 0, sin(angle), 0, 1, 0, -sin(angle), 0, cos(angle));
+		*this = *this*RotationalY;
+		return *this;
+	}
+	Mat3 setRotateZ(float angle)
+	{
+		Mat3 RotationalZ = Mat3(cos(angle), -sin(angle), 0, sin(angle), cos(angle), 0, 0, 0, 1);
+		*this = *this* RotationalZ;
+		return *this;
 	}
 private:
 	float mat3[3][3];
@@ -250,5 +292,73 @@ private:
 
 class Mat4
 {
+public:
+	Mat4(float a[4][4])
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			for (int j = 0; j < 4; j++)
+			{
+				mat4[i][j] = a[i][j];
+			}
+		}
+	}
+	Mat4(float a, float b, float c, float d, float e, float f, float g, float h, float i, float j, float k, float l, float m, float n, float o, float p)
+	{
+		mat4[0][0] = a;
+		mat4[0][1] = b;
+		mat4[0][2] = c;
+		mat4[0][3] = d;
+		mat4[1][0] = e;
+		mat4[1][1] = f;
+		mat4[1][2] = g;
+		mat4[1][3] = h;
+		mat4[2][0] = i;
+		mat4[2][1] = j;
+		mat4[2][2] = k;
+		mat4[2][3] = l;
+		mat4[3][0] = m;
+		mat4[3][1] = n;
+		mat4[3][2] = o;
+		mat4[3][3] = p;
+	}
+	Mat4 operator *(const Mat4 &mat) const
+	{
+		Mat4 temp = Mat4(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		for (int i = 0; i < 64; i++)
+		{
+			temp.mat4[i / 16][(i % 16) / 4] += mat4[(i / 16)][i % 4] * mat.mat4[i % 4][(i % 16) / 4];
+		}
+		return temp;
+	}
+	Vector4 operator *(const Vector4 &vec)const
+	{
+		Vector4 temp = Vector4(0, 0, 0, 0);
+		for (int i = 0; i < 16; i++)
+		{
+			temp.VecArray[i / 4] += mat4[i / 4][i % 4] * vec.VecArray[i % 4];
+		}
+		return temp;
+	}
+	Mat4 setRotateX(float angle)
+	{
+		Mat4 RotationalX = Mat4(1, 0, 0, 0, 0, cos(angle), -sin(angle), 0, 0, sin(angle), cos(angle), 0, 0, 0, 0, 1);
+		*this = *this*RotationalX;
+		return *this;
+	}
+	Mat4 setRotateY(float angle)
+	{
+		Mat4 RotationalY = Mat4(cos(angle), 0, sin(angle), 0, 0, 1, 0, 0, -sin(angle), 0, cos(angle), 0, 0, 0, 0, 1);
+		*this = *this*RotationalY;
+		return *this;
+	}
+	Mat4 setRotateZ(float angle)
+	{
+		Mat4 RotationalZ = Mat4(cos(angle), -sin(angle), 0, 0, sin(angle), cos(angle), 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		*this = *this*RotationalZ;
+		return *this;
+	}
+private:
+	float mat4[4][4];
 
 };
