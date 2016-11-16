@@ -8,34 +8,55 @@ class Vector2
 public:
 	Vector2() {};
 	Vector2(float xx, float yy) : x(xx), y(yy) {}
+	//NAME: operator==
+	//ARGUMENTS: one argument of a const 2d vector
+	//DESCRIPTION: checks each value in the vector and returns true if they are equal and false if they are not
 	bool operator == (const Vector2 &A)
 	{
 		return x == A.x && y == A.y;
 	}
+	//NAME:operator +
+	//ARGUMENTS: one argument of type const 2d vector
+	//DESCRIPTION: adds the current vector to the one passed in and returns the result
 	Vector2 operator +(const Vector2 &A)
 	{
 		Vector2 temp = Vector2(x + A.x, y + A.y);
 		return temp;
 	}
+	//NAME: operator -
+	//ARGUMENTS: one argument of a const 3d vector
+	//DESCRIPTION: subtracts each of the values in the vector and returns the result
 	Vector2 operator -(const Vector2 &A)
 	{
 		Vector2 temp = Vector2(x - A.x, y - A.y);
 		return temp;
 	}
+	//NAME: operator *
+	//ARGUMENTS: one argument of a float
+	//DESCRIPTION: multiplies each value in the vector by a scalar value and returns the resultant vector
 	Vector2 operator *(float Mult)
 	{
 		Vector2 temp = Vector2(x * Mult, y * Mult);
 		return temp;
 	}
+	//NAME: Magnitude
+	//ARGUMENTS: no arguments
+	//DESCRIPTION: returns the value that is the length of the vector
 	float Magnitude()
 	{
 		return sqrt((x*x) + (y*y));
 	}
+	//NAME: Normalize
+	//ARGUMENTS: no arguments
+	//DESCRIPTION: creates a temporary 3d vector and sets its values to the normalized values of the current vector by dividing each value by the magnitude
 	Vector2 Normalize()
 	{
 		Vector2 temp = Vector2(x / Magnitude(), y / Magnitude());
 		return temp;
 	}
+	//NAME: DotProduct
+	//ARGUMENTS: one arguments of const 3d vector
+	//DESCRIPTION: returns the result of the dot product of the current vector and the vector passed in and returns the result
 	float DotProduct(const Vector2 &A)
 	{
 		return (x * A.x) + (y * A.y);
@@ -47,45 +68,70 @@ class Vector3
 {
 public:
 	Vector3() {}
+	//constructor that takes in 3 float values for each part in the vector 
 	Vector3(float xpos, float ypos, float zpos) : x(xpos), y(ypos), z(zpos)
 	{
 		VecArray[0] = xpos;
 		VecArray[1] = ypos;
 		VecArray[2] = zpos;
 	}
-	Vector3 ScalarMult(float Scalar)
+	//NAME: operator *
+	//ARGUMENTS: one argument of a float
+	//DESCRIPTION: multiplies each value in the vector by a scalar value and returns the resultant vector
+	Vector3 operator *(float Scalar)
 	{
 		Vector3 temp = Vector3(x*Scalar, y*Scalar, z*Scalar);
 		return temp;
 	}
+	//NAME: Magnitude
+	//ARGUMENTS: no arguments
+	//DESCRIPTION: returns the value that is the length of the vector
 	float Magnitude()
 	{
 		return sqrt(x*x + y*y + z*z);
 	}
+	//NAME: Normalize
+	//ARGUMENTS: no arguments
+	//DESCRIPTION: creates a temporary 3d vector and sets its values to the normalized values of the current vector by dividing each value by the magnitude
 	Vector3 Normalize()
 	{
 		Vector3 temp = Vector3(x / Magnitude(), y / Magnitude(), z / Magnitude());
 		return temp;
 	}
+	//NAME: DotProduct
+	//ARGUMENTS: one arguments of const 3d vector
+	//DESCRIPTION: returns the result of the dot product of the current vector and the vector passed in and returns the result
 	float DotProduct(const Vector3 &B)
 	{
 		return ((x*B.x) + (y*B.y) + (z*B.z));
 	}
+	//NAME: CrossProduct
+	//ARGUMENTS: one argument of type const 3d vector
+	//DESCRIPTION: creates a new 3d vector whos values are given by the cross product of the current vector and the one passed in using the cross product formula
 	Vector3 CrossProduct(const Vector3 &B)
 	{
 		Vector3 temp = Vector3((y*B.z) - (z*B.y), (x*B.z) - (z*B.x), (x*B.y) - (y*B.x));
 		return temp;
 	}
+	//NAME:operator +
+	//ARGUMENTS: one argument of type const 3d vector
+	//DESCRIPTION: adds the current vector to the one passed in and returns the result
 	Vector3 operator +(const Vector3 &B)
 	{
 		Vector3 temp = Vector3(x + B.x, y + B.y, z + B.z);
 		return temp;
 	}
+	//NAME: operator -
+	//ARGUMENTS: one argument of a const 3d vector
+	//DESCRIPTION: subtracts each of the values in the vector and returns the result
 	Vector3 operator -(const Vector3 &B)
 	{
 		Vector3 temp = Vector3(x - B.x, y - B.y, z - B.z);
 		return temp;
 	}
+	//NAME: operator==
+	//ARGUMENTS: one argument of a const 3d vector
+	//DESCRIPTION: checks each value in the vector and returns true if they are equal and false if they are not
 	bool operator==(const Vector3 &B)
 	{
 		return x == B.x&&y == B.y&&z == B.z;
@@ -98,6 +144,7 @@ class Vector4
 {
 public:
 	Vector4() {}
+	//constructor that takes in 4 float values for each part in the vector 
 	Vector4(float xpos, float ypos, float zpos, float wpos) :x(xpos), y(ypos), z(zpos), w(wpos)
 	{
 		VecArray[0] = xpos;
@@ -105,35 +152,55 @@ public:
 		VecArray[2] = zpos;
 		VecArray[3] = wpos;
 	}
-
+	//NAME: operator *
+	//ARGUMENTS: one argument of a float
+	//DESCRIPTION: multiplies each value in the vector by a scalar value and returns the resultant vector
 	Vector4 operator*(float scalar)
 	{
 		Vector4 temp = Vector4(x*scalar, y*scalar, z*scalar, w*scalar);
 		return temp;
 	}
+	//NAME: Magnitude
+	//ARGUMENTS: no arguments
+	//DESCRIPTION: returns the value that is the length of the vector
 	float Magnitude()
 	{
 		return sqrt(x*x + y*y + z*z + w*w);
 	}
+	//NAME: Normalize
+	//ARGUMENTS: no arguments
+	//DESCRIPTION: creates a temporary 4d vector and sets its values to the normalized values of the current vector by dividing each value by the magnitude
 	Vector4 Normalize()
 	{
 		Vector4 temp = Vector4(x / Magnitude(), y / Magnitude(), z / Magnitude(), w / Magnitude());
 		return temp;
 	}
+	//NAME: DotProduct
+	//ARGUMENTS: one arguments of const 4d vector
+	//DESCRIPTION: returns the result of the dot product of the current vector and the vector passed in and returns the result
 	float DotProduct(const Vector4 &B)
 	{
 		return ((x*B.x) + (y*B.y) + (z*B.z) + (w*B.w));
 	}
+	//NAME:operator +
+	//ARGUMENTS: one argument of type const 4d vector
+	//DESCRIPTION: adds the current vector to the one passed in and returns the result
 	Vector4 operator +(const Vector4 &B)
 	{
 		Vector4 temp = Vector4(x + B.x, y + B.y, z + B.z, w + B.w);
 		return temp;
 	}
+	//NAME: operator -
+	//ARGUMENTS: one argument of a const 4d vector
+	//DESCRIPTION: subtracts each of the values in the vector and returns the result
 	Vector4 operator -(const Vector4 &B)
 	{
 		Vector4 temp = Vector4(x - B.x, y - B.y, z - B.z, w - B.w);
 		return temp;
 	}
+	//NAME: operator==
+	//ARGUMENTS: one argument of a const 4d vector
+	//DESCRIPTION: checks each value in the vector and returns true if they are equal and false if they are not
 	bool operator==(const Vector4 &B)
 	{
 		return x == B.x&&y == B.y&&z == B.z&&w == B.w;
@@ -146,6 +213,7 @@ class Mat2
 {
 public:
 	Mat2() {}
+	//
 	Mat2(float a[2][2])
 	{
 		for (int i = 0; i < 2; i++)
@@ -156,6 +224,7 @@ public:
 			}
 		}
 	}
+	//
 	Mat2(float a, float b, float c, float d)
 	{
 		mat2[0][0] = a;
@@ -163,6 +232,9 @@ public:
 		mat2[1][0] = c;
 		mat2[1][1] = d;
 	}
+	//NAME: print
+	//ARGUMENTS: no arguments
+	//DESCRIPTION: 
 	void print()
 	{
 		for (int i = 0; i < 2; i++)
@@ -173,12 +245,18 @@ public:
 			}
 		}
 	}
+	//NAME: operator *
+	//ARGUMENTS: one argument of a const 2d vector
+	//DESCRIPTION: multiplies the current matrix by the vector that is passed in and returns the result
 	Vector2 operator *(const Vector2 &vec)const
 	{
 		Vector2 temp = Vector2(vec.x*mat2[0][0] + vec.y*mat2[0][1], vec.x*mat2[1][0] + vec.y*mat2[1][1]);
 		return temp;
 	}
-	Mat2 operator *(const Mat2 &mat)
+	//NAME: operator *
+	//ARGUMENTS: one argument of a const 2x2 matrix
+	//DESCRIPTION: multiplies current matrix by the passed in matrix and returns the result
+	Mat2 operator *(const Mat2 &mat)const
 	{
 		Mat2 temp = Mat2(mat2[0][0] * mat.mat2[0][0] + mat2[0][1] * mat.mat2[1][0], mat2[0][0] * mat.mat2[0][1] + mat2[0][1] * mat.mat2[1][1], mat2[1][0] * mat.mat2[0][0] + mat2[1][1] * mat.mat2[1][0], mat2[1][0] * mat.mat2[0][1] + mat2[1][1] * mat.mat2[1][1]);
 		return temp;
@@ -191,6 +269,7 @@ class Mat3
 {
 public:
 	Mat3() {}
+	//constructor taking in an array and initializing the matrix
 	Mat3(float a[3][3])
 	{
 		for (int i = 0; i < 3; i++)
@@ -201,6 +280,7 @@ public:
 			}
 		}
 	}
+	//constructor for 9 float values to initialize the matrix
 	Mat3(float a, float b, float c, float d, float e, float f, float g, float h, float i)
 	{
 		mat3[0][0] = a;
@@ -213,6 +293,9 @@ public:
 		mat3[2][1] = h;
 		mat3[2][2] = i;
 	}
+	//NAME: print
+	//ARGUMENTS: none
+	//DESCRIPTION: loops through the matrix and prints the number at each index
 	void print()
 	{
 		for (int i = 0; i < 2; i++)
