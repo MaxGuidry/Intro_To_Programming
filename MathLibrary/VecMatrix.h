@@ -223,6 +223,9 @@ public:
 			}
 		}
 	}
+	//NAME: operator *
+	//ARGUMENTS: one argument of a 3x3 matrix
+	//DESCRIPTION: creates matrix temp of all zeros then sets this temp equal to the two matrices multiplied together
 	Vector3 operator *(const Vector3 &vec)
 	{
 		Vector3 temp = Vector3(0, 0, 0);
@@ -236,30 +239,13 @@ public:
 		}
 		return temp;
 	}
+	//NAME: operator *
+	//ARGUMENTS: one argument of a 3d vector
+	//DESCRIPTION: creates a vector temp of all zeros then loops through the multiplication of the vector and matrix
+	//setting the temp equal to the product and returns the temp vector
 	Mat3 operator *(const Mat3 &mat)
 	{
 		Mat3 temp = Mat3(0, 0, 0, 0, 0, 0, 0, 0, 0);
-
-		//FIRST ATTEMPT(WORKS)
-		/*for (int i = 0; i < 3; i++)
-		{
-			for (int j = 0; j < 3; j++)
-			{
-				for (int k = 0; k < 3; k++)
-				{
-					temp.mat3[i][j] += mat3[i][k] * mat.mat3[k][j];
-				}
-			}
-		}*/
-
-		//SECOND ATTEMPT(WORKS)
-		/*for (int i = 0; i < 3; i++)
-		{
-			for (int j = 0; j < 9; j++)
-			{
-				temp.mat3[i][j/3] += mat3[i][j%3] * mat.mat3[j%3][j/3];
-			}
-		}*/
 
 		//THIRD AND FINAL ATTEMPT(WORKS) 
 		for (int i = 0; i < 27; i++)
@@ -268,18 +254,30 @@ public:
 		}
 		return temp;
 	}
+	//NAME: setRotateX
+	//ARGUMENTS: one argument of type float
+	//DESCRIPTION: function for rotation around the X axis using the overloaded multiplication operators and returns
+	//the current instance of the matrix
 	Mat3 setRotateX(float angle)
 	{
 		Mat3 RotationalX = Mat3(1, 0, 0, 0, cos(angle), -sin(angle), 0, sin(angle), cos(angle));
 		*this = *this*RotationalX;
 		return *this;
 	}
+	//NAME: setRotateY
+	//ARGUMENTS: one argument of type float
+	//DESCRIPTION: function for rotation around the Y axis using the overloaded multiplication operators and returns
+	//the current instance of the matrix
 	Mat3 setRotateY(float angle)
 	{
 		Mat3 RotationalY = Mat3(cos(angle), 0, sin(angle), 0, 1, 0, -sin(angle), 0, cos(angle));
 		*this = *this*RotationalY;
 		return *this;
 	}
+	//NAME: setRotateZ
+	//ARGUMENTS: one argument of type float
+	//DESCRIPTION: function for rotation around the Z axis using the overloaded multiplication operators and returns
+	//the current instance of the matrix
 	Mat3 setRotateZ(float angle)
 	{
 		Mat3 RotationalZ = Mat3(cos(angle), -sin(angle), 0, sin(angle), cos(angle), 0, 0, 0, 1);
@@ -293,6 +291,8 @@ private:
 class Mat4
 {
 public:
+	//Two constructors 
+	//Constructor that takes in a 2x2 array to initialize the matrix
 	Mat4(float a[4][4])
 	{
 		for (int i = 0; i < 4; i++)
@@ -303,6 +303,7 @@ public:
 			}
 		}
 	}
+	//Constructor that takes in 16 float values to initialize the matrix
 	Mat4(float a, float b, float c, float d, float e, float f, float g, float h, float i, float j, float k, float l, float m, float n, float o, float p)
 	{
 		mat4[0][0] = a;
@@ -322,6 +323,9 @@ public:
 		mat4[3][2] = o;
 		mat4[3][3] = p;
 	}
+	//NAME: operator *
+	//ARGUMENTS: one argument of a 4x4 matrix
+	//DESCRIPTION: creates matrix temp of all zeros then sets this temp equal to the two matrices multiplied together
 	Mat4 operator *(const Mat4 &mat) const
 	{
 		Mat4 temp = Mat4(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
@@ -331,6 +335,10 @@ public:
 		}
 		return temp;
 	}
+	//NAME: operator *
+	//ARGUMENTS: one argument of a 4d vector
+	//DESCRIPTION: creates a vector temp of all zeros then loops through the multiplication of the vector and matrix
+	//setting the temp equal to the product and returns the temp vector
 	Vector4 operator *(const Vector4 &vec)const
 	{
 		Vector4 temp = Vector4(0, 0, 0, 0);
@@ -340,18 +348,30 @@ public:
 		}
 		return temp;
 	}
+	//NAME: setRotateX
+	//ARGUMENTS: one argument of type float
+	//DESCRIPTION: function for rotation around the x axis using the overloaded multiplication operators and returns
+	//the current instance of the matrix
 	Mat4 setRotateX(float angle)
 	{
 		Mat4 RotationalX = Mat4(1, 0, 0, 0, 0, cos(angle), -sin(angle), 0, 0, sin(angle), cos(angle), 0, 0, 0, 0, 1);
 		*this = *this*RotationalX;
 		return *this;
 	}
+	//NAME: setRotateY
+	//ARGUMENTS: one argument of type float
+	//DESCRIPTION: function for rotation around the y axis using the overloaded multiplication operators and returns
+	//the current instance of the matrix
 	Mat4 setRotateY(float angle)
 	{
 		Mat4 RotationalY = Mat4(cos(angle), 0, sin(angle), 0, 0, 1, 0, 0, -sin(angle), 0, cos(angle), 0, 0, 0, 0, 1);
 		*this = *this*RotationalY;
 		return *this;
-	}
+	}	
+	//NAME: setRotateZ
+	//ARGUMENTS: one arguments of type float
+	//DESCRIPTION: function for rotation around the z axis using the overloaded multipication operators and returns
+	//the current instance of the matrix
 	Mat4 setRotateZ(float angle)
 	{
 		Mat4 RotationalZ = Mat4(cos(angle), -sin(angle), 0, 0, sin(angle), cos(angle), 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
