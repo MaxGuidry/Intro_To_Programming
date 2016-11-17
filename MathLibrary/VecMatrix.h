@@ -2,7 +2,7 @@
 #include<iostream>
 #include<time.h>
 #include<Windows.h>
-
+#include<fstream>
 class Vector2
 {
 public:
@@ -14,6 +14,11 @@ public:
 	bool operator == (const Vector2 &A)
 	{
 		return x == A.x && y == A.y;
+	}
+	friend std::ostream& operator<<(std::ostream& os, const Vector2 vec)
+	{
+		os << '<' << vec.x << ',' << vec.y << '>';
+		return os;
 	}
 	//NAME:operator +
 	//ARGUMENTS: one argument of type const 2d vector
@@ -74,6 +79,11 @@ public:
 		VecArray[0] = xpos;
 		VecArray[1] = ypos;
 		VecArray[2] = zpos;
+	}
+	friend std::ostream& operator<<(std::ostream& os, const Vector3 vec)
+	{
+		os << '<' << vec.VecArray[0] << ',' << vec.VecArray[1] << ',' << vec.VecArray[2] << '>';
+		return os;
 	}
 	//NAME: operator *
 	//ARGUMENTS: one argument of a float
@@ -152,6 +162,11 @@ public:
 		VecArray[2] = zpos;
 		VecArray[3] = wpos;
 	}
+	friend std::ostream& operator<<(std::ostream& os, const Vector4 vec)
+	{
+		os << '<' << vec.VecArray[0] << ',' << vec.VecArray[1] << ',' << vec.VecArray[2] <<','<<vec.VecArray[3]<< '>';
+		return os;
+	}
 	//NAME: operator *
 	//ARGUMENTS: one argument of a float
 	//DESCRIPTION: multiplies each value in the vector by a scalar value and returns the resultant vector
@@ -212,27 +227,35 @@ public:
 class Mat2
 {
 public:
-	Mat2() {}
-	//
 	Mat2(float a[2][2])
 	{
 		for (int i = 0; i < 2; i++)
 		{
 			for (int j = 0; j < 2; j++)
 			{
-				mat2[i][j] = a[i][j];
+				matrix[i][j] = a[i][j];
 			}
 		}
 	}
 	//
 	Mat2(float a, float b, float c, float d)
 	{
-		mat2[0][0] = a;
-		mat2[0][1] = b;
-		mat2[1][0] = c;
-		mat2[1][1] = d;
+		matrix[0][0] = a;
+		matrix[0][1] = b;
+		matrix[1][0] = c;
+		matrix[1][1] = d;
 	}
-	//NAME: print
+	friend std::ostream& operator<<(std::ostream& os, const Mat2 mat)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			if (i % 2 == 0)
+				os << "\n";
+			os << mat.matrix[i / 2][i % 2] << " ";
+		}
+		return os;
+	}
+	//NAME: print	
 	//ARGUMENTS: no arguments
 	//DESCRIPTION: 
 	void print()
@@ -241,7 +264,7 @@ public:
 		{
 			for (int j = 0; j < 2; j++)
 			{
-				std::cout << mat2[i][j] << ", ";
+				std::cout << matrix[i][j] << ", ";
 			}
 		}
 	}
@@ -250,7 +273,7 @@ public:
 	//DESCRIPTION: multiplies the current matrix by the vector that is passed in and returns the result
 	Vector2 operator *(const Vector2 &vec)const
 	{
-		Vector2 temp = Vector2(vec.x*mat2[0][0] + vec.y*mat2[0][1], vec.x*mat2[1][0] + vec.y*mat2[1][1]);
+		Vector2 temp = Vector2(vec.x*matrix[0][0] + vec.y*matrix[1][0], vec.x*matrix[0][1] + vec.y*matrix[1][1]);
 		return temp;
 	}
 	//NAME: operator *
@@ -258,11 +281,11 @@ public:
 	//DESCRIPTION: multiplies current matrix by the passed in matrix and returns the result
 	Mat2 operator *(const Mat2 &mat)const
 	{
-		Mat2 temp = Mat2(mat2[0][0] * mat.mat2[0][0] + mat2[0][1] * mat.mat2[1][0], mat2[0][0] * mat.mat2[0][1] + mat2[0][1] * mat.mat2[1][1], mat2[1][0] * mat.mat2[0][0] + mat2[1][1] * mat.mat2[1][0], mat2[1][0] * mat.mat2[0][1] + mat2[1][1] * mat.mat2[1][1]);
+		Mat2 temp = Mat2(matrix[0][0] * mat.matrix[0][0] + matrix[0][1] * mat.matrix[1][0], matrix[0][0] * mat.matrix[0][1] + matrix[0][1] * mat.matrix[1][1], matrix[1][0] * mat.matrix[0][0] + matrix[1][1] * mat.matrix[1][0], matrix[1][0] * mat.matrix[0][1] + matrix[1][1] * mat.matrix[1][1]);
 		return temp;
 	}
 private:
-	float mat2[2][2];
+	float matrix[2][2];
 };
 
 class Mat3
@@ -276,33 +299,43 @@ public:
 		{
 			for (int j = 0; j < 3; j++)
 			{
-				mat3[i][j] = a[i][j];
+				matrix[i][j] = a[i][j];
 			}
 		}
 	}
 	//constructor for 9 float values to initialize the matrix
 	Mat3(float a, float b, float c, float d, float e, float f, float g, float h, float i)
 	{
-		mat3[0][0] = a;
-		mat3[0][1] = b;
-		mat3[0][2] = c;
-		mat3[1][0] = d;
-		mat3[1][1] = e;
-		mat3[1][2] = f;
-		mat3[2][0] = g;
-		mat3[2][1] = h;
-		mat3[2][2] = i;
+		matrix[0][0] = a;
+		matrix[0][1] = b;
+		matrix[0][2] = c;
+		matrix[1][0] = d;
+		matrix[1][1] = e;
+		matrix[1][2] = f;
+		matrix[2][0] = g;
+		matrix[2][1] = h;
+		matrix[2][2] = i;
+	}
+	friend std::ostream& operator<<(std::ostream& os, const Mat3 mat)
+	{
+		for (int i = 0; i < 9; i++)
+		{
+			if (i % 3 == 0)
+				os << "\n";
+			os << mat.matrix[i / 3][i % 3] << " ";
+		}
+		return os;
 	}
 	//NAME: print
 	//ARGUMENTS: none
 	//DESCRIPTION: loops through the matrix and prints the number at each index
 	void print()
 	{
-		for (int i = 0; i < 2; i++)
+		for (int i = 0; i < 3; i++)
 		{
-			for (int j = 0; j < 2; j++)
+			for (int j = 0; j < 3; j++)
 			{
-				std::cout << mat3[i][j] << ", ";
+				std::cout << matrix[i][j] << ", ";
 			}
 		}
 	}
@@ -316,7 +349,7 @@ public:
 		{
 			for (int j = 0; j < 3; j++)
 			{
-				temp.VecArray[i] += vec.VecArray[j] * mat3[i][j];
+				temp.VecArray[i] += vec.VecArray[j] * matrix[j][i];
 
 			}
 		}
@@ -333,7 +366,7 @@ public:
 		//THIRD AND FINAL ATTEMPT(WORKS) 
 		for (int i = 0; i < 27; i++)
 		{
-			temp.mat3[i / 9][(i % 9) / 3] += mat3[(i / 9)][i % 3] * mat.mat3[i % 3][(i % 9) / 3];
+			temp.matrix[i / 9][(i % 9) / 3] += matrix[(i / 9)][i % 3] * mat.matrix[i % 3][(i % 9) / 3];
 		}
 		return temp;
 	}
@@ -368,7 +401,7 @@ public:
 		return *this;
 	}
 private:
-	float mat3[3][3];
+	float matrix[3][3];
 };
 
 class Mat4
@@ -382,29 +415,49 @@ public:
 		{
 			for (int j = 0; j < 4; j++)
 			{
-				mat4[i][j] = a[i][j];
+				matrix[i][j] = a[i][j];
 			}
 		}
 	}
 	//Constructor that takes in 16 float values to initialize the matrix
 	Mat4(float a, float b, float c, float d, float e, float f, float g, float h, float i, float j, float k, float l, float m, float n, float o, float p)
 	{
-		mat4[0][0] = a;
-		mat4[0][1] = b;
-		mat4[0][2] = c;
-		mat4[0][3] = d;
-		mat4[1][0] = e;
-		mat4[1][1] = f;
-		mat4[1][2] = g;
-		mat4[1][3] = h;
-		mat4[2][0] = i;
-		mat4[2][1] = j;
-		mat4[2][2] = k;
-		mat4[2][3] = l;
-		mat4[3][0] = m;
-		mat4[3][1] = n;
-		mat4[3][2] = o;
-		mat4[3][3] = p;
+		matrix[0][0] = a;
+		matrix[0][1] = b;
+		matrix[0][2] = c;
+		matrix[0][3] = d;
+		matrix[1][0] = e;
+		matrix[1][1] = f;
+		matrix[1][2] = g;
+		matrix[1][3] = h;
+		matrix[2][0] = i;
+		matrix[2][1] = j;
+		matrix[2][2] = k;
+		matrix[2][3] = l;
+		matrix[3][0] = m;
+		matrix[3][1] = n;
+		matrix[3][2] = o;
+		matrix[3][3] = p;
+	}
+	friend std::ostream& operator<<(std::ostream& os, const Mat4 mat)
+	{
+		for (int i = 0; i < 16; i++)
+		{
+			if (i % 4 == 0)
+				os << "\n";
+			os << mat.matrix[i / 4][i % 4] << " ";
+		}
+		return os;
+	}
+	void print()
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			for (int j = 0; j < 4; j++)
+			{
+				std::cout << matrix[i][j] << ", ";
+			}
+		}
 	}
 	//NAME: operator *
 	//ARGUMENTS: one argument of a 4x4 matrix
@@ -414,7 +467,7 @@ public:
 		Mat4 temp = Mat4(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 		for (int i = 0; i < 64; i++)
 		{
-			temp.mat4[i / 16][(i % 16) / 4] += mat4[(i / 16)][i % 4] * mat.mat4[i % 4][(i % 16) / 4];
+			temp.matrix[i / 16][(i % 16) / 4] += matrix[(i / 16)][i % 4] * mat.matrix[i % 4][(i % 16) / 4];
 		}
 		return temp;
 	}
@@ -427,7 +480,7 @@ public:
 		Vector4 temp = Vector4(0, 0, 0, 0);
 		for (int i = 0; i < 16; i++)
 		{
-			temp.VecArray[i / 4] += mat4[i / 4][i % 4] * vec.VecArray[i % 4];
+			temp.VecArray[i / 4] += matrix[i % 4][i / 4] * vec.VecArray[i % 4];
 		}
 		return temp;
 	}
@@ -462,6 +515,6 @@ public:
 		return *this;
 	}
 private:
-	float mat4[4][4];
+	float matrix[4][4];
 
 };
