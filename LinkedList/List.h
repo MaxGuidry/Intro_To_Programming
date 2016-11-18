@@ -1,213 +1,225 @@
 #pragma once
 #include<cassert>
 template<typename Type>
-struct nodeType;
+struct NodeType;
 
 template<typename Type>
 class LinkedListIterator;
 
 template<typename Type>
-class linkedListType
+class LinkedListType
 {
 public:
-	const linkedListType<Type>& operator= (const linkedListType<Type>& otherList)
+	const LinkedListType<Type>& operator= (const LinkedListType<Type>& otherList)
 	{
 		copyList(otherList);
 		return *this;
 	}
 
-		void initializeList()
+	void initializeList()
+	{
+		first = new NodeType<Type>;
+		last = new NodeType<Type>;
+		count = 0;
+	}
+	bool isEmptyList() const
+	{
+		return (count == 0) ? true : false;
+	}
+	void print() const
+	{
+		NodeType<Type> * temp = new NodeType<Type>;
+		int counter = 0;
+		for (; temp != NULL; counter++)
 		{
-			first = new nodeType<Type>;
-			last = new nodeType<Type>;
-			count = 0;
-		}
-		bool isEmptyList() const
-		{
-			return (count == 0) ? true : false;
-		}
-		void print() const
-		{
-			nodeType<Type> * temp = new nodeType<Type>;
-			int counter = 0;
-			for (; temp != NULL; counter++)
+			if (counter == 0)
 			{
-				if (counter == 0)
-				{
-					temp = first;
-				}
-				else
-				{
-					temp = temp->link;
-				}
-				if (temp != nullptr)
-					std::cout << temp->info << ", ";
-			}
-		}
-
-		void insertBack(const Type& node)
-		{
-			if (count == 0)
-			{
-				first->info = node;
-				first->link = nullptr;
-				last->info = node;
-				last->link = nullptr;
-				count++;
+				temp = first;
 			}
 			else
 			{
-				nodeType<Type> *newNode = new nodeType<Type>;
-				last->link = newNode;
-				last = newNode;
-				if (count == 1)
-					first->link = newNode;
-				last->info = node;
-				last->link = nullptr;
-				count++;
-			}
-		}
-		void insertFirst(const Type & node)
-		{
-			if (count == 0)
-			{
-				first->info = node;
-				first->link = nullptr;
-				last->info = node;
-				last->link = nullptr;
-				count++;
-			}
-			else
-			{
-				nodeType<Type> *newNode = new nodeType<Type>;
-				newNode->link = first;
-				first = newNode;
-				first->info = node;
-				count++;
-			}
-		}
-		linkedListType()
-		{
-			first = new nodeType<Type>;
-			last = new nodeType<Type>;
-			count = 0;
-		}
-		Type front() const
-		{
-			assert(count != 0);
-			return first->info;
-		}
-		Type back() const
-		{
-			assert(count != 0);
-			return last->info;
-		}
-		bool search(const Type& nodeInfo)
-		{
-			LinkedListIterator<Type> temp = LinkedListIterator<Type>(begin());
-			while (*temp != NULL)
-			{
-				if (*temp == nodeInfo)
-					return true;
-				++temp;
-			}
-			return false;
-		}
-		LinkedListIterator<Type> begin()
-		{
-			return LinkedListIterator<Type>(first);
-		}
-		LinkedListIterator<Type> end()
-		{
-			return LinkedListIterator<Type>(last->link);
-		}
-		const int length()
-		{
-			return count;
-		}
-		void destroyList()
-		{
-			nodeType<Type> * temp = first;
-			while (temp != NULL)
-			{
-				nodeType<Type> *tmp = temp;
 				temp = temp->link;
-				delete tmp;
 			}
-			first = NULL;
-			last = NULL;
-			count = 0;
+			if (temp != nullptr)
+				std::cout << temp->info << ", ";
 		}
-		void deleteNode(const Type &nodeInfo)
-		{
-			nodeType<Type> *temp = first;
-			if (temp->info == nodeInfo)
-			{
+	}
 
-			}
-			while (temp->link->info != nodeInfo)
-			{
-				temp = temp->link;
-			}
-			if (temp->link->info == nodeInfo)
-			{
-				nodeType<Type> * tmp = temp->link;
-				temp->link = temp->link->link;
-				delete tmp;
-			}
-		}
-		/*linkedListType(const linkedListType<Type>otherList)
-		{
-			copyList();
-		}*/
-		~linkedListType<Type>()
-		{
-			destroyList();
-		}
-	protected:
-		int count;
-		nodeType<Type> * first;
-		nodeType<Type> * last;
-	private:
-		void copyList(const linkedListType<Type>&otherList)
-		{
-			first = otherList.first;
-			last = otherList.last;
-			count = otherList.count;
-		}
-	};
-	template<typename Type>
-	struct nodeType
+	void insertBack(const Type& node)
 	{
-	public:
-		Type info;
-		nodeType<Type> * link;
-	};
-	template<typename Type>
-	class LinkedListIterator
+		if (count == 0)
+		{
+			first->info = node;
+			first->link = nullptr;
+			last->info = node;
+			last->link = nullptr;
+			count++;
+		}
+		else
+		{
+			NodeType<Type> *newNode = new NodeType<Type>;
+			last->link = newNode;
+			last = newNode;
+			if (count == 1)
+				first->link = newNode;
+			last->info = node;
+			last->link = nullptr;
+			count++;
+		}
+	}
+	void insertFirst(const Type & node)
 	{
-	private:
-		nodeType<Type> * current;
-	public:
-		LinkedListIterator() {}
-		LinkedListIterator(nodeType<Type> *a) :current(a) {}
-		Type operator*	()
+		if (count == 0)
 		{
-			if (current == nullptr)
-				return NULL;
-			return current->info;
+			first->info = node;
+			first->link = nullptr;
+			last->info = node;
+			last->link = nullptr;
+			count++;
 		}
-		LinkedListIterator<Type> operator++()
+		else
 		{
-			current = current->link;
-			return *this;
+			NodeType<Type> *newNode = new NodeType<Type>;
+			newNode->link = first;
+			first = newNode;
+			first->info = node;
+			count++;
 		}
-		bool operator==(const LinkedListIterator<Type>& a)
+	}
+	LinkedListType()
+	{
+		first = new NodeType<Type>;
+		last = new NodeType<Type>;
+		count = 0;
+	}
+	Type front() const
+	{
+		assert(count != 0);
+		return first->info;
+	}
+	Type back() const
+	{
+		assert(count != 0);
+		return last->info;
+	}
+	bool search(const Type& nodeInfo)
+	{
+		LinkedListIterator<Type> temp = LinkedListIterator<Type>(begin());
+		while (*temp != NULL)
 		{
-			return (current == a.current) ? true : false;
+			if (*temp == nodeInfo)
+				return true;
+			++temp;
 		}
-		bool operator!=(const LinkedListIterator<Type>& a)
+		return false;
+	}
+	LinkedListIterator<Type> begin()
+	{
+		return LinkedListIterator<Type>(first);
+	}
+	LinkedListIterator<Type> end()
+	{
+		return LinkedListIterator<Type>(last->link);
+	}
+	const int length()
+	{
+		return count;
+	}
+	void destroyList()
+	{
+		NodeType<Type> * temp = first;
+		while (temp != NULL)
 		{
-			return (current != a.current) ? true : false;
+			NodeType<Type> *tmp = temp;
+			temp = temp->link;
+			delete tmp;
 		}
-	};
+		first = NULL;
+		last = NULL;
+		count = 0;
+	}
+	void deleteNode(const Type& nodeInfo)
+	{
+
+		NodeType<Type>* node = first;
+		if (node == nullptr)
+			return;
+		if (node->info == nodeInfo)
+		{
+			NodeType<Type> *tmp = node;
+			node = node->link;
+			delete tmp;
+			count--;
+			first = node;
+		}
+		else
+		{
+			while (node->link != NULL)
+			{
+				if (node->link->info == nodeInfo)
+				{
+					NodeType<Type>* tmp = node->link;
+					node->link = node->link->link;
+					delete tmp;
+					count--;
+					break;
+				}
+				node = node->link;
+			}
+		}
+	}
+	LinkedListType<Type>(const LinkedListType<Type>otherList)
+	{
+		copyList(otherList);
+	}
+	~LinkedListType<Type>()
+	{
+		destroyList();
+	}
+protected:
+	int count;
+	NodeType<Type> * first;
+	NodeType<Type> * last;
+private:
+	void copyList(const LinkedListType<Type>&otherList)
+	{
+		first = otherList.first;
+		last = otherList.last;
+		count = otherList.count;
+	}
+};
+template<typename Type>
+struct NodeType
+{
+public:
+	Type info;
+	NodeType<Type> * link;
+};
+template<typename Type>
+class LinkedListIterator
+{
+private:
+	NodeType<Type> * current;
+public:
+	LinkedListIterator() {}
+	LinkedListIterator(NodeType<Type> *a) :current(a) {}
+	Type operator*	()
+	{
+		if (current == nullptr)
+			return NULL;
+		return current->info;
+	}
+	LinkedListIterator<Type> operator++()
+	{
+		current = current->link;
+		return *this;
+	}
+	bool operator==(const LinkedListIterator<Type>& a)
+	{
+		return (current == a.current) ? true : false;
+	}
+	bool operator!=(const LinkedListIterator<Type>& a)
+	{
+		return (current != a.current) ? true : false;
+	}
+};

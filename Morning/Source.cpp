@@ -1,32 +1,18 @@
 #include<iostream>
-int sum(int*, int);
-
+int mult(int, int);
 int main()
 {
-	int nums[5] = { 1,4,6,5,2 };
-	int thing = sum(nums, 5);
+	mult(4, 10);
 	system("pause");
 	return 0;
 }
-int sum(int * array, int size)
+
+int mult(int a, int b)
 {
-	int largest = array[0];
-	int second;
-	for (int i = 1; i < size; i++)
+	int temp = 0;
+	for (int i = 0; i < b; i++)
 	{
-		if (array[i] == largest)
-		{
-			second = array[i];
-		}
-		else if (array[i] > largest)
-		{
-			second = largest;
-			largest = array[i];
-		}
-		if (array[i] > second&&array[i] != largest)
-		{
-			second = array[i];
-		}
+		temp += a;
 	}
-	return second + largest;
+	return temp;
 }

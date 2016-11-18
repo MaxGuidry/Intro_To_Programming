@@ -1,11 +1,11 @@
 #include<iostream>
 #include"List.h"
-void list(nodeType<int> *);
+void list(NodeType<int> *);
 int main()
 {
 	
-	linkedListType<int> *test = new linkedListType<int>();
-	linkedListType<int> *second = new linkedListType<int>();
+	LinkedListType<int> *test = new LinkedListType<int>();
+	LinkedListType<int> *second = new LinkedListType<int>();
 	test->insertBack(2);
 	test->insertBack(5);
 	test->insertBack(9);
@@ -22,7 +22,7 @@ int main()
 	return 0;
 }
 
-void list(nodeType<int> * node)
+void list(NodeType<int> * node)
 {
 	while (node != NULL)
 	{
