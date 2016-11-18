@@ -377,7 +377,7 @@ public:
 	Mat3 setRotateX(float angle)
 	{
 		Mat3 RotationalX = Mat3(1, 0, 0, 0, cos(angle), -sin(angle), 0, sin(angle), cos(angle));
-		*this = *this*RotationalX;
+		*this = RotationalX**this;
 		return *this;
 	}
 	//NAME: setRotateY
@@ -387,7 +387,7 @@ public:
 	Mat3 setRotateY(float angle)
 	{
 		Mat3 RotationalY = Mat3(cos(angle), 0, sin(angle), 0, 1, 0, -sin(angle), 0, cos(angle));
-		*this = *this*RotationalY;
+		*this = RotationalY**this;
 		return *this;
 	}
 	//NAME: setRotateZ
@@ -397,7 +397,7 @@ public:
 	Mat3 setRotateZ(float angle)
 	{
 		Mat3 RotationalZ = Mat3(cos(angle), -sin(angle), 0, sin(angle), cos(angle), 0, 0, 0, 1);
-		*this = *this* RotationalZ;
+		*this = RotationalZ**this;
 		return *this;
 	}
 private:
@@ -491,7 +491,7 @@ public:
 	Mat4 setRotateX(float angle)
 	{
 		Mat4 RotationalX = Mat4(1, 0, 0, 0, 0, cos(angle), -sin(angle), 0, 0, sin(angle), cos(angle), 0, 0, 0, 0, 1);
-		*this = *this*RotationalX;
+		*this = RotationalX**this;
 		return *this;
 	}
 	//NAME: setRotateY
@@ -501,7 +501,7 @@ public:
 	Mat4 setRotateY(float angle)
 	{
 		Mat4 RotationalY = Mat4(cos(angle), 0, sin(angle), 0, 0, 1, 0, 0, -sin(angle), 0, cos(angle), 0, 0, 0, 0, 1);
-		*this = *this*RotationalY;
+		*this = RotationalY**this;
 		return *this;
 	}	
 	//NAME: setRotateZ
@@ -511,7 +511,7 @@ public:
 	Mat4 setRotateZ(float angle)
 	{
 		Mat4 RotationalZ = Mat4(cos(angle), -sin(angle), 0, 0, sin(angle), cos(angle), 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-		*this = *this*RotationalZ;
+		*this = RotationalZ**this;
 		return *this;
 	}
 private:

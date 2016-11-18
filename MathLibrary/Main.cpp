@@ -24,7 +24,7 @@ int main()
 	test << "Result: " << a*a;
 	test << "\n\n";
 	test << "Matrix2 * Vector2 Expected result: <7,10>\n\n";
-	test << "Result: " << a*d << "\n\n";
+	test << "Result: " << a*d << "\n\n\n\n";
 	test << "\n\nMatrix3:\n\n";
 	test << "Matrix3 * Matrix3 Expected result:\n304,392,426\n145,173,120\n2332,3014,3300\n\n";
 	test << "Result: " << b*b << "\n\n";
