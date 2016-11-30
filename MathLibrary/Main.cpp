@@ -7,19 +7,55 @@
 #include<fstream>
 
 const float pi = 3.141592653;
+//const float pi = 3;
 int main()
 {
-	Mat2 a = Mat2(1, 2, 3, 4);
-	Mat3 b = Mat3(5, 6, 7, 8, 9, 1, 33, 44, 55);
-	Mat4 c = Mat4(11, 22, 33, 44, 55, 66, 77, 88, 99, 1, 2, 3, 4, 5, 6, 7);
-	Mat3 ToRotate3d = Mat3(.5, .23, .55, .4, .98, .232, .57, .614, .38);
-	Mat4 Rotate4d = Mat4(.16, 1, .564, .75, .12, .9, .003, .5, .63, .323, .89, .908, .3156, .44, .3, .767);
-	Vector2 d = Vector2(1, 2);
-	Vector3 e = Vector3(3, 4, 5);
-	Vector4 f = Vector4(6, 7, 8, 9);
+	Mat2 Matrices2D[4] = { Mat2(1,2,3,4),Mat2(5,6,7,8),Mat2(9,0,1,2),Mat2(3,4,5,6) };
+	Mat3 Matrices3D[4] = { Mat3(1,2,3,4,5,6,7,8,9),Mat3(10,0,1,2,3,4,5,6,7),Mat3(8,9,10,0,1,2,3,4,5),Mat3(6,7,8,9,10,0,1,2,3) };
+	Mat4 Matrices4D[4] = { Mat4(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16),Mat4(17,18,19,20,0,1,2,3,4,5,6,7,8,9,10,11),Mat4(12,13,14,15,16,17,18,19,20,0,1,2,3,4,5,6),Mat4(7,8,9,10,11,12,13,14,15,16,17,18,19,20,0,1) };
+	Vector2 Vector2D[4] = { Vector2(1, 2),Vector2(3,4),Vector2(5,6),Vector2(7,8) };
+	Vector3 Vector3D[4] = { Vector3(1,2,3),Vector3(4,5,6),Vector3(7,8,9),Vector3(10,0,1) };
+	Vector4 Vector4D[4] = { Vector4(1,2,3,4),Vector4(5,6,7,8),Vector4(9,10,11,12),Vector4(12,13,14,15) };
 	std::fstream test;
 	test.open("Test File.txt", std::ios_base::out);
-	test << "Matrix2:\n\n";
+	test << "Matrix2 :\n\n";
+	test << "Matrix2 * Matrix2:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << Matrices2D[i / 4] * Matrices2D[i % 4];
+		test << "\n";
+	}
+	test << "\nMatrix2 * Vector2:\n";
+	for (int i = 0; i < 10; i++)
+	{
+		test << Matrices2D[i / 4] * Vector2D[i % 4];
+		test << "\n\n";
+	}
+	test << "\n\n\nMatrix3 :\n\n";
+	test << "Matrix3 * Matrix3:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << Matrices3D[i / 4] * Matrices3D[i % 4];
+		test << "\n";
+	}
+	test << "\nMatrix3 * Vector3:\n";
+	for (int i = 0; i < 10; i++)
+	{
+		test << Matrices3D[i / 4] * Vector3D[i % 4];
+		test << "\n\n";
+	}
+	test << "Matrix3 rotation: \n";
+	test << "x axis:\n";
+	for (int i = 0; i < 10; i++)
+	{
+		test << Matrices3D[0].setRotateX((36 * pi) / 180);
+		test << "\n\n";
+	}
+
+
+
+
+	/*test << "Matrix2:\n\n";
 	test << "Matrix2 * Matrix2 Expected result: \n7,10\n15,22\n\n";
 	test << "Result: " << a*a;
 	test << "\n\n";
@@ -41,9 +77,9 @@ int main()
 	test << "Result: " << c*c;
 	test << "\n\n";
 	test << "Matrix4 * Vector4 Expected result: <1279,647,807,967>\n\n";
-	test << "Result: " << c*f;	
+	test << "Result: " << c*f;
 	test << "\n\nMatrix4 rotated around the x axis by 12.4 degrees. Expected result: \n0.16,1.09778300612,0.33610783592,0.75\n0.12,0.87964925799,-0.19033178016,0.5\n0.63,0.50657959014,0.79987881761,0.908\n0.3156,0.4941564022,0.1985181388,0.767";
-	test << "\n\nResult: " << Rotate4d.setRotateX((12.4*pi) / 180);
+	test << "\n\nResult: " << Rotate4d.setRotateX((12.4*pi) / 180);*/
 	test.close();
 	system("pause");
 	return 0;

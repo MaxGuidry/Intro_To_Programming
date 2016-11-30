@@ -377,7 +377,8 @@ public:
 	Mat3 setRotateX(float angle)
 	{
 		Mat3 RotationalX = Mat3(1, 0, 0, 0, cos(angle), -sin(angle), 0, sin(angle), cos(angle));
-		*this = RotationalX**this;
+		//*this = RotationalX**this;
+		*this = *this*RotationalX;
 		return *this;
 	}
 	//NAME: setRotateY
