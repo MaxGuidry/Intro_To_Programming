@@ -49,7 +49,7 @@ public:
 	{
 		if (end.getX() - start.getX() == 0)
 		{
-			return ;
+			return 12.3212321232123;
 		}
 		return (end.getY() - start.getY()) / (end.getX() - start.getX());
 	}
