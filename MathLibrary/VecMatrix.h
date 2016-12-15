@@ -51,10 +51,26 @@ public:
 class Vector3
 {
 public:
+	//NAME: operator==
+	//ARGUMENTS: one argument of a const 3d vector
+	//DESCRIPTION: checks each value in the vector and returns true if they are equal and false if they are not
+	bool operator==(const Vector3 &B);
+	
+	friend std::ostream& operator<<(std::ostream& os, const Vector3 vec);
+	
+	//NAME:operator +
+	//ARGUMENTS: one argument of type const 3d vector
+	//DESCRIPTION: adds the current vector to the one passed in and returns the result
+	Vector3 operator +(const Vector3 &B);
+	
+	//NAME: operator -
+	//ARGUMENTS: one argument of a const 3d vector
+	//DESCRIPTION: subtracts each of the values in the vector and returns the result
+	Vector3 operator -(const Vector3 &B);
+	
 	Vector3();
 	//constructor that takes in 3 float values for each part in the vector 
 	Vector3(float xpos, float ypos, float zpos);
-	friend std::ostream& operator<<(std::ostream& os, const Vector3 vec);
 	
 	//NAME: operator *
 	//ARGUMENTS: one argument of a float
@@ -81,20 +97,11 @@ public:
 	//DESCRIPTION: creates a new 3d vector whos values are given by the cross product of the current vector and the one passed in using the cross product formula
 	Vector3 CrossProduct(const Vector3 &B);
 	
-	//NAME:operator +
-	//ARGUMENTS: one argument of type const 3d vector
-	//DESCRIPTION: adds the current vector to the one passed in and returns the result
-	Vector3 operator +(const Vector3 &B);
 	
-	//NAME: operator -
-	//ARGUMENTS: one argument of a const 3d vector
-	//DESCRIPTION: subtracts each of the values in the vector and returns the result
-	Vector3 operator -(const Vector3 &B);
 	
-	//NAME: operator==
-	//ARGUMENTS: one argument of a const 3d vector
-	//DESCRIPTION: checks each value in the vector and returns true if they are equal and false if they are not
-	bool operator==(const Vector3 &B);
+	
+	
+	
 	
 	float VecArray[3];
 	float x, y, z;

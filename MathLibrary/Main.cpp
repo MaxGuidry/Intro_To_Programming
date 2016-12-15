@@ -7,7 +7,6 @@
 #include<fstream>
 
 const float pi = 3.141592653;
-//const float pi = 3;
 int main()
 {
 	Mat2 Matrices2D[4] = { Mat2(1,2,3,4),Mat2(5,6,7,8),Mat2(9,0,1,2),Mat2(3,4,5,6) };
