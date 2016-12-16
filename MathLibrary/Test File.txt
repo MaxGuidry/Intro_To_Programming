@@ -1,3 +1,589 @@
+Vector2 :
+
+Vector2+Vector2:
+Expected:<2,4>
+Result:<2,4>
+
+Expected:<4,6>
+Result:<4,6>
+
+Expected:<6,8>
+Result:<6,8>
+
+Expected:<8,10>
+Result:<8,10>
+
+Expected:<4,6>
+Result:<4,6>
+
+Expected:<6,8>
+Result:<6,8>
+
+Expected:<8,10>
+Result:<8,10>
+
+Expected:<10,12>
+Result:<10,12>
+
+Expected:<6,8>
+Result:<6,8>
+
+Expected:<8,10>
+Result:<8,10>
+Vector2-Vector2:
+Expected:<0,0>
+Result:<0,0>
+
+Expected:<-2,-2>
+Result:<-2,-2>
+
+Expected:<-4,-4>
+Result:<-4,-4>
+
+Expected:<-6,-6>
+Result:<-6,-6>
+
+Expected:<2,2>
+Result:<2,2>
+
+Expected:<0,0>
+Result:<0,0>
+
+Expected:<-2,-2>
+Result:<-2,-2>
+
+Expected:<-4,-4>
+Result:<-4,-4>
+
+Expected:<4,4>
+Result:<4,4>
+
+Expected:<2,2>
+Result:<2,2>
+Vector2*scalar:
+Expected:<11,22>
+Result:<11,22>
+
+Expected:<31,42>
+Result:<31,42>
+
+Expected:<51,62>
+Result:<51,62>
+
+Expected:<71,82>
+Result:<71,82>
+
+Expected:<13,24>
+Result:<13,24>
+
+Expected:<33,44>
+Result:<33,44>
+
+Expected:<53,64>
+Result:<53,64>
+
+Expected:<73,84>
+Result:<73,84>
+
+Expected:<15,26>
+Result:<15,26>
+
+Expected:<35,46>
+Result:<35,46>
+Vector2 Magnitude:
+Expected:4.47214
+Result:4.47214
+
+Expected:7.2111
+Result:7.2111
+
+Expected:10
+Result:10
+
+Expected:12.8062
+Result:12.8062
+
+Expected:7.2111
+Result:7.2111
+
+Expected:10
+Result:10
+
+Expected:12.8062
+Result:12.8062
+
+Expected:15.6205
+Result:15.6205
+
+Expected:10
+Result:10
+
+Expected:12.8062
+Result:12.8062
+Vector2 Normalize: (All numbers should be 1 since I am displaying theird magnitudes after being normalized)
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+Vector2 dot product:
+Expected:5
+Result:5
+
+Expected:11
+Result:11
+
+Expected:17
+Result:17
+
+Expected:23
+Result:23
+
+Expected:11
+Result:11
+
+Expected:25
+Result:25
+
+Expected:39
+Result:39
+
+Expected:53
+Result:53
+
+Expected:17
+Result:17
+
+Expected:39
+Result:39
+Vector3 :
+
+Vector3+Vector3:
+Expected:<2,4,6>
+Result:<2,4,6>
+
+Expected:<5,7,9>
+Result:<5,7,9>
+
+Expected:<8,10,12>
+Result:<8,10,12>
+
+Expected:<11,2,4>
+Result:<11,2,4>
+
+Expected:<5,7,9>
+Result:<5,7,9>
+
+Expected:<8,10,12>
+Result:<8,10,12>
+
+Expected:<11,13,15>
+Result:<11,13,15>
+
+Expected:<14,5,7>
+Result:<14,5,7>
+
+Expected:<8,10,12>
+Result:<8,10,12>
+
+Expected:<11,13,15>
+Result:<11,13,15>
+Vector3-Vector3:
+Expected:<0,0,0>
+Result:<0,0,0>
+
+Expected:<-3,-3,-3>
+Result:<-3,-3,-3>
+
+Expected:<-6,-6,-6>
+Result:<-6,-6,-6>
+
+Expected:<-9,2,2>
+Result:<-9,2,2>
+
+Expected:<3,3,3>
+Result:<3,3,3>
+
+Expected:<0,0,0>
+Result:<0,0,0>
+
+Expected:<-3,-3,-3>
+Result:<-3,-3,-3>
+
+Expected:<-6,5,5>
+Result:<-6,5,5>
+
+Expected:<6,6,6>
+Result:<6,6,6>
+
+Expected:<3,3,3>
+Result:<3,3,3>
+Vector3*scalar:
+Expected:<11,22,33>
+Result:<11,22,33>
+
+Expected:<41,52,63>
+Result:<41,52,63>
+
+Expected:<71,82,93>
+Result:<71,82,93>
+
+Expected:<101,2,13>
+Result:<101,2,13>
+
+Expected:<14,25,36>
+Result:<14,25,36>
+
+Expected:<44,55,66>
+Result:<44,55,66>
+
+Expected:<74,85,96>
+Result:<74,85,96>
+
+Expected:<104,5,16>
+Result:<104,5,16>
+
+Expected:<17,28,39>
+Result:<17,28,39>
+
+Expected:<47,58,69>
+Result:<47,58,69>
+Vector3 Magnitude:
+Expected:7.48331
+Result:7.48331
+
+Expected:12.4499
+Result:12.4499
+
+Expected:17.5499
+Result:17.5499
+
+Expected:11.8743
+Result:11.8743
+
+Expected:12.4499
+Result:12.4499
+
+Expected:17.5499
+Result:17.5499
+
+Expected:22.6936
+Result:22.6936
+
+Expected:16.4317
+Result:16.4317
+
+Expected:17.5499
+Result:17.5499
+
+Expected:22.6936
+Result:22.6936
+Vector3 Normalize: (All numbers should be 1 since I am displaying theird magnitudes after being normalized)
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+Vector3 dot product:
+Expected:14
+Result:14
+
+Expected:32
+Result:32
+
+Expected:50
+Result:50
+
+Expected:13
+Result:13
+
+Expected:32
+Result:32
+
+Expected:77
+Result:77
+
+Expected:122
+Result:122
+
+Expected:46
+Result:46
+
+Expected:50
+Result:50
+
+Expected:122
+Result:122
+Vector3 Cross Product:
+Expected:<0,0,0>
+
+Result:<0,0,0>
+
+Expected:<-3,-6,-3>
+
+Result:<-3,-6,-3>
+
+Expected:<-6,-12,-6>
+
+Result:<-6,-12,-6>
+
+Expected:<2,-29,-20>
+
+Result:<2,-29,-20>
+
+Expected:<3,6,3>
+
+Result:<3,6,3>
+
+Expected:<0,0,0>
+
+Result:<0,0,0>
+
+Expected:<-3,-6,-3>
+
+Result:<-3,-6,-3>
+
+Expected:<5,-56,-50>
+
+Result:<5,-56,-50>
+
+Expected:<6,12,6>
+
+Result:<6,12,6>
+
+Expected:<3,6,3>
+
+Result:<3,6,3>
+Vector4 :
+
+Vector4+Vector4:
+Expected:<2,4,6,8>
+Result:<2,4,6,8>
+
+Expected:<6,8,10,12>
+Result:<6,8,10,12>
+
+Expected:<10,12,14,16>
+Result:<10,12,14,16>
+
+Expected:<13,15,17,19>
+Result:<13,15,17,19>
+
+Expected:<6,8,10,12>
+Result:<6,8,10,12>
+
+Expected:<10,12,14,16>
+Result:<10,12,14,16>
+
+Expected:<14,16,18,20>
+Result:<14,16,18,20>
+
+Expected:<17,19,21,23>
+Result:<17,19,21,23>
+
+Expected:<10,12,14,16>
+Result:<10,12,14,16>
+
+Expected:<14,16,18,20>
+Result:<14,16,18,20>
+Vector4-Vector4:
+Expected:<0,0,0,0>
+Result:<0,0,0,0>
+
+Expected:<-4,-4,-4,-4>
+Result:<-4,-4,-4,-4>
+
+Expected:<-8,-8,-8,-8>
+Result:<-8,-8,-8,-8>
+
+Expected:<-11,-11,-11,-11>
+Result:<-11,-11,-11,-11>
+
+Expected:<4,4,4,4>
+Result:<4,4,4,4>
+
+Expected:<0,0,0,0>
+Result:<0,0,0,0>
+
+Expected:<-4,-4,-4,-4>
+Result:<-4,-4,-4,-4>
+
+Expected:<-7,-7,-7,-7>
+Result:<-7,-7,-7,-7>
+
+Expected:<8,8,8,8>
+Result:<8,8,8,8>
+
+Expected:<4,4,4,4>
+Result:<4,4,4,4>
+Vector4*scalar:
+Expected:<11,22,33,44>
+Result:<11,22,33,44>
+
+Expected:<51,62,73,84>
+Result:<51,62,73,84>
+
+Expected:<91,102,113,124>
+Result:<91,102,113,124>
+
+Expected:<121,132,143,154>
+Result:<121,132,143,154>
+
+Expected:<15,26,37,48>
+Result:<15,26,37,48>
+
+Expected:<55,66,77,88>
+Result:<55,66,77,88>
+
+Expected:<95,106,117,128>
+Result:<95,106,117,128>
+
+Expected:<125,136,147,158>
+Result:<125,136,147,158>
+
+Expected:<19,30,41,52>
+Result:<19,30,41,52>
+
+Expected:<59,70,81,92>
+Result:<59,70,81,92>
+Vector4 Magnitude:
+Expected:10.9545
+Result:10.9545
+
+Expected:18.5472
+Result:18.5472
+
+Expected:26.3818
+Result:26.3818
+
+Expected:32.311
+Result:32.311
+
+Expected:18.5472
+Result:18.5472
+
+Expected:26.3818
+Result:26.3818
+
+Expected:34.2929
+Result:34.2929
+
+Expected:40.2492
+Result:40.2492
+
+Expected:26.3818
+Result:26.3818
+
+Expected:34.2929
+Result:34.2929
+Vector4 Normalize: (All numbers should be 1 since I am displaying theird magnitudes after being normalized)
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+
+Expected:1
+Result:1
+Vector2 dot product:
+Expected:30
+Result:30
+
+Expected:70
+Result:70
+
+Expected:110
+Result:110
+
+Expected:140
+Result:140
+
+Expected:70
+Result:70
+
+Expected:174
+Result:174
+
+Expected:278
+Result:278
+
+Expected:356
+Result:356
+
+Expected:110
+Result:110
+
+Expected:278
+Result:278
 Matrix2 :
 
 Matrix2 * Matrix2:
@@ -122,6 +708,7 @@ Expected:
 30 36 42 
 66 81 96 
 102 126 150 
+
 Result:
 30 36 42 
 66 81 96 
@@ -131,6 +718,7 @@ Expected:
 29 24 30 
 80 51 66 
 131 78 102 
+
 Result:
 29 24 30 
 80 51 66 
@@ -140,6 +728,7 @@ Expected:
 17 23 29 
 50 65 80 
 83 107 131 
+
 Result:
 17 23 29 
 50 65 80 
@@ -149,6 +738,7 @@ Expected:
 27 33 17 
 75 90 50 
 123 147 83 
+
 Result:
 27 33 17 
 75 90 50 
@@ -158,6 +748,7 @@ Expected:
 17 28 39 
 42 51 60 
 78 96 114 
+
 Result:
 17 28 39 
 42 51 60 
@@ -167,6 +758,7 @@ Expected:
 105 6 17 
 46 33 42 
 97 60 78 
+
 Result:
 105 6 17 
 46 33 42 
@@ -176,6 +768,7 @@ Expected:
 83 94 105 
 28 37 46 
 61 79 97 
+
 Result:
 83 94 105 
 28 37 46 
@@ -185,6 +778,7 @@ Expected:
 61 72 83 
 43 52 28 
 91 109 61 
+
 Result:
 61 72 83 
 43 52 28 
@@ -194,6 +788,7 @@ Expected:
 114 141 168 
 18 21 24 
 54 66 78 
+
 Result:
 114 141 168 
 18 21 24 
@@ -203,6 +798,7 @@ Expected:
 148 87 114 
 12 15 18 
 63 42 54 
+
 Result:
 148 87 114 
 12 15 18 
@@ -255,6 +851,8 @@ x axis:
 1 2 3 
 4 5 6 
 7 8 9 
+
+The matrices will be rotated a total of 360 degrees around the X axis making the end result the same as the original above ^^
 
 
 1 2 3 
@@ -315,6 +913,8 @@ y axis:
 4 5 6 
 7 8 9 
 
+The matrices will be rotated a total of 360 degrees around the Y axis making the end result the same as the original above ^^
+
 
 4.92351 6.32032 7.71712 
 4 5 6 
@@ -373,6 +973,8 @@ z axis:
 1 2 3 
 4 5 6 
 7 8 9 
+
+The matrices will be rotated a total of 360 degrees around the Z axis making the end result the same as the original above ^^
 
 
 -1.54212 -1.32089 -1.09966 
@@ -435,6 +1037,7 @@ Expected:
 202 228 254 280 
 314 356 398 440 
 426 484 542 600 
+
 Result:
 90 100 110 120 
 202 228 254 280 
@@ -447,6 +1050,7 @@ Expected:
 177 203 229 255 
 293 335 377 419 
 409 467 525 583 
+
 Result:
 61 71 81 91 
 177 203 229 255 
@@ -459,6 +1063,7 @@ Expected:
 320 199 225 251 
 524 335 377 419 
 728 471 529 587 
+
 Result:
 116 63 73 83 
 320 199 225 251 
@@ -471,6 +1076,7 @@ Expected:
 358 384 242 268 
 566 608 398 440 
 774 832 554 612 
+
 Result:
 150 160 86 96 
 358 384 242 268 
@@ -483,6 +1089,7 @@ Expected:
 62 68 74 80 
 174 196 218 240 
 286 324 362 400 
+
 Result:
 538 612 686 760 
 62 68 74 80 
@@ -495,6 +1102,7 @@ Expected:
 32 38 44 50 
 148 170 192 214 
 264 302 340 378 
+
 Result:
 525 599 673 747 
 32 38 44 50 
@@ -507,6 +1115,7 @@ Expected:
 65 29 35 41 
 269 165 187 209 
 473 301 339 377 
+
 Result:
 932 607 681 755 
 65 29 35 41 
@@ -519,6 +1128,7 @@ Expected:
 98 104 47 53 
 306 328 203 225 
 514 552 359 397 
+
 Result:
 982 1056 710 784 
 98 104 47 53 
@@ -531,6 +1141,7 @@ Expected:
 510 580 650 720 
 55 78 101 124 
 146 164 182 200 
+
 Result:
 398 452 506 560 
 510 580 650 720 
@@ -543,6 +1154,7 @@ Expected:
 496 566 636 706 
 360 383 406 429 
 119 137 155 173 
+
 Result:
 380 434 488 542 
 496 566 636 706 
@@ -598,6 +1210,8 @@ x axis
 5 6 7 8 
 9 10 11 12 
 13 14 15 16 
+
+The matrices will be rotated a total of 360 degrees around the X axis making the end result the same as the original above ^^
 
 
 1 2 3 4 
@@ -667,6 +1281,8 @@ y axis
 9 10 11 12 
 13 14 15 16 
 
+The matrices will be rotated a total of 360 degrees around the Y axis making the end result the same as the original above ^^
+
 
 6.09908 7.49589 8.89269 10.2895 
 5 6 7 8 
@@ -734,6 +1350,8 @@ z axis
 5 6 7 8 
 9 10 11 12 
 13 14 15 16 
+
+The matrices will be rotated a total of 360 degrees around the Z axis making the end result the same as the original above ^^
 
 
 -2.12991 -1.90868 -1.68745 -1.46622 

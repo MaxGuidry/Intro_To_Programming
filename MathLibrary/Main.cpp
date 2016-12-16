@@ -9,6 +9,7 @@
 const float pi = 3.141592653;
 int main()
 {
+
 	Mat2 Matrices2D[4] = { Mat2(1,2,3,4),Mat2(5,6,7,8),Mat2(9,0,1,2),Mat2(3,4,5,6) };
 
 	Mat3 Matrices3D[4] = { Mat3(1,2,3,4,5,6,7,8,9),Mat3(10,0,1,2,3,4,5,6,7),Mat3(8,9,10,0,1,2,3,4,5),Mat3(6,7,8,9,10,0,1,2,3) };
@@ -56,11 +57,168 @@ int main()
 	Vector4 Matrix4TimesVector4Answers[10] =
 	{ Vector4(90,100,110,120),Vector4(202,228,254,280), Vector4(314,356,398,440), Vector4(398,452,506,560)
 	,Vector4(61,71,81,91), Vector4(177,203,229,255), Vector4(293,335,377,419)
-	,Vector4(380,434,488,542), Vector4(116,63,73,83),Vector4(320,199,225,251)};
+	,Vector4(380,434,488,542), Vector4(116,63,73,83),Vector4(320,199,225,251) };
 
-	  
+
 	std::fstream test;
 	test.open("Test File.txt", std::ios_base::out);
+	test << "Vector2 :\n\n";
+	test << "Vector2+Vector2:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << Vector2D[i / 4] + Vector2D[i % 4] << "\n";
+		test << "Result:";
+		test << Vector2D[i / 4] + Vector2D[i % 4] << "\n";
+	}
+	test << "Vector2-Vector2:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << Vector2D[i / 4] - Vector2D[i % 4] << "\n";
+		test << "Result:";
+		test << Vector2D[i / 4] - Vector2D[i % 4] << "\n";
+	}
+	test << "Vector2*scalar:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << Vector2D[i / 4] + Vector2D[i % 4] * 10 << "\n";
+		test << "Result:";
+		test << Vector2D[i / 4] + Vector2D[i % 4] * 10 << "\n";
+	}
+	test << "Vector2 Magnitude:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << (Vector2D[i / 4] + Vector2D[i % 4]).Magnitude() << "\n";
+		test << "Result:";
+		test << (Vector2D[i / 4] + Vector2D[i % 4]).Magnitude() << "\n";
+	}
+	test << "Vector2 Normalize: (All numbers should be 1 since I am displaying theird magnitudes after being normalized)";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << (Vector2D[i / 4] + Vector2D[i % 4]).Normalize().Magnitude() << "\n";
+		test << "Result:";
+		test << (Vector2D[i / 4] + Vector2D[i % 4]).Normalize().Magnitude() << "\n";
+	}
+	test << "Vector2 dot product:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << Vector2D[i / 4].DotProduct(Vector2D[i % 4]) << "\n";
+		test << "Result:";
+		test << Vector2D[i / 4].DotProduct(Vector2D[i % 4]) << "\n";
+	}
+
+	test << "Vector3 :\n\n";
+	test << "Vector3+Vector3:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << Vector3D[i / 4] + Vector3D[i % 4] << "\n";
+		test << "Result:";
+		test << Vector3D[i / 4] + Vector3D[i % 4] << "\n";
+	}
+	test << "Vector3-Vector3:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << Vector3D[i / 4] - Vector3D[i % 4] << "\n";
+		test << "Result:";
+		test << Vector3D[i / 4] - Vector3D[i % 4] << "\n";
+	}
+	test << "Vector3*scalar:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << Vector3D[i / 4] + Vector3D[i % 4] * 10 << "\n";
+		test << "Result:";
+		test << Vector3D[i / 4] + Vector3D[i % 4] * 10 << "\n";
+	}
+	test << "Vector3 Magnitude:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << (Vector3D[i / 4] + Vector3D[i % 4]).Magnitude() << "\n";
+		test << "Result:";
+		test << (Vector3D[i / 4] + Vector3D[i % 4]).Magnitude() << "\n";
+	}
+	test << "Vector3 Normalize: (All numbers should be 1 since I am displaying theird magnitudes after being normalized)";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << (Vector3D[i / 4] + Vector3D[i % 4]).Normalize().Magnitude() << "\n";
+		test << "Result:";
+		test << (Vector3D[i / 4] + Vector3D[i % 4]).Normalize().Magnitude() << "\n";
+	}
+	test << "Vector3 dot product:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << Vector3D[i / 4].DotProduct(Vector3D[i % 4]) << "\n";
+		test << "Result:";
+		test << Vector3D[i / 4].DotProduct(Vector3D[i % 4]) << "\n";
+	}
+	test << "Vector3 Cross Product:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << (Vector3D[i / 4] + Vector3D[i % 4]).CrossProduct(Vector3D[i % 4]) << "\n";
+		test << "\nResult:";
+		test << (Vector3D[i / 4] + Vector3D[i % 4]).CrossProduct(Vector3D[i % 4]) << "\n";
+	}
+
+	test << "Vector4 :\n\n";
+	test << "Vector4+Vector4:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << Vector4D[i / 4] + Vector4D[i % 4] << "\n";
+		test << "Result:";
+		test << Vector4D[i / 4] + Vector4D[i % 4] << "\n";
+	}
+	test << "Vector4-Vector4:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << Vector4D[i / 4] - Vector4D[i % 4] << "\n";
+		test << "Result:";
+		test << Vector4D[i / 4] - Vector4D[i % 4] << "\n";
+	}
+	test << "Vector4*scalar:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << Vector4D[i / 4] + Vector4D[i % 4] * 10 << "\n";
+		test << "Result:";
+		test << Vector4D[i / 4] + Vector4D[i % 4] * 10 << "\n";
+	}
+	test << "Vector4 Magnitude:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << (Vector4D[i / 4] + Vector4D[i % 4]).Magnitude() << "\n";
+		test << "Result:";
+		test << (Vector4D[i / 4] + Vector4D[i % 4]).Magnitude() << "\n";
+	}
+	test << "Vector4 Normalize: (All numbers should be 1 since I am displaying theird magnitudes after being normalized)";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << (Vector4D[i / 4] + Vector4D[i % 4]).Normalize().Magnitude() << "\n";
+		test << "Result:";
+		test << (Vector4D[i / 4] + Vector4D[i % 4]).Normalize().Magnitude() << "\n";
+	}
+	test << "Vector2 dot product:";
+	for (int i = 0; i < 10; i++)
+	{
+		test << "\nExpected:";
+		test << Vector4D[i / 4].DotProduct(Vector4D[i % 4]) << "\n";
+		test << "Result:";
+		test << Vector4D[i / 4].DotProduct(Vector4D[i % 4]) << "\n";
+	}
 	test << "Matrix2 :\n\n";
 	test << "Matrix2 * Matrix2:";
 	for (int i = 0; i < 10; i++)
@@ -82,7 +240,7 @@ int main()
 	test << "Matrix3 * Matrix3:";
 	for (int i = 0; i < 10; i++)
 	{
-		test << "\nExpected:" << Matrix3MultiplicationAnswers[i] << "\n";
+		test << "\nExpected:" << Matrix3MultiplicationAnswers[i] << "\n\n";
 		test << "Result:";
 		test << Matrices3D[i / 4] * Matrices3D[i % 4];
 		test << "\n";
@@ -98,6 +256,7 @@ int main()
 	test << "Matrix3 rotation: \n";
 	test << "x axis:\n";
 	test << Matrices3D[0] << "\n\n";
+	test << "The matrices will be rotated a total of 360 degrees around the X axis making the end result the same as the original above ^^\n\n";
 	for (int i = 0; i < 10; i++)
 	{
 		test << Matrices3D[0].setRotateX((36 * pi) / 180);
@@ -106,6 +265,7 @@ int main()
 	test << "\n\nMatrix3 rotation:";
 	test << "\ny axis:\n";
 	test << Matrices3D[0] << "\n\n";
+	test << "The matrices will be rotated a total of 360 degrees around the Y axis making the end result the same as the original above ^^\n\n";
 	for (int i = 0; i < 10; i++)
 	{
 		test << Matrices3D[0].setRotateY((36 * pi) / 180);
@@ -114,6 +274,7 @@ int main()
 	test << "\n\nMatrix3 rotation:";
 	test << "\nz axis:\n";
 	test << Matrices3D[0] << "\n\n";
+	test << "The matrices will be rotated a total of 360 degrees around the Z axis making the end result the same as the original above ^^\n\n";
 	for (int i = 0; i < 10; i++)
 	{
 		test << Matrices3D[0].setRotateZ((36 * pi) / 180);
@@ -123,7 +284,7 @@ int main()
 	test << "Matrix4 * Matrix4:";
 	for (int i = 0; i < 10; i++)
 	{
-		test << "\nExpected:" << Matrix4MultiplicationAnswers[i] << "\n";
+		test << "\nExpected:" << Matrix4MultiplicationAnswers[i] << "\n\n";
 		test << "Result:";
 		test << Matrices4D[i / 4] * Matrices4D[i % 4];
 		test << "\n\n";
@@ -139,6 +300,7 @@ int main()
 	test << "Matrix4 rotation:";
 	test << "\nx axis\n";
 	test << Matrices4D[0] << "\n\n";
+	test << "The matrices will be rotated a total of 360 degrees around the X axis making the end result the same as the original above ^^\n\n";
 	for (int i = 0; i < 10; i++)
 	{
 		test << Matrices4D[0].setRotateX((36 * pi) / 180);
@@ -147,6 +309,7 @@ int main()
 	test << "Matrix4 rotation:";
 	test << "\ny axis\n";
 	test << Matrices4D[0] << "\n\n";
+	test << "The matrices will be rotated a total of 360 degrees around the Y axis making the end result the same as the original above ^^\n\n";
 	for (int i = 0; i < 10; i++)
 	{
 		test << Matrices4D[0].setRotateY((36 * pi) / 180);
@@ -154,6 +317,7 @@ int main()
 	}test << "Matrix4 rotation:";
 	test << "\nz axis\n";
 	test << Matrices4D[0] << "\n\n";
+	test << "The matrices will be rotated a total of 360 degrees around the Z axis making the end result the same as the original above ^^\n\n";
 	for (int i = 0; i < 10; i++)
 	{
 		test << Matrices4D[0].setRotateZ((36 * pi) / 180);
