@@ -1,4 +1,4 @@
-#pragma once
+	#pragma once
 #include<cassert>
 template<typename Type>
 struct NodeType;
@@ -223,7 +223,7 @@ public:
 	}
 
 	//copy constructor
-	LinkedListType<Type>(const LinkedListType<Type>otherList)
+	LinkedListType<Type>(const LinkedListType<Type>&otherList)
 	{
 		copyList(otherList);
 	}

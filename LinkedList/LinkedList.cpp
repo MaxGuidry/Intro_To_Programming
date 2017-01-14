@@ -5,19 +5,17 @@ int main()
 {
 	
 	LinkedListType<int> *test = new LinkedListType<int>();
-	LinkedListType<int> *second = new LinkedListType<int>();
-	test->insertBack(2);
+	std::cout << "\nAdded 5 and 7 to the list:\n";
+	test->insertFirst(7);
 	test->insertBack(5);
-	test->insertBack(9);
-	test->insertBack(1);
-	test->insertFirst(4);
-	test->deleteNode(9);
-	*second=*test;
-	second->print();
-	test->front();
-	LinkedListIterator<int> temp =LinkedListIterator<int>(test->begin());
-	bool d=test->search(7);
-	test->destroyList();
+	test->print();
+	std::cout << "\nAdded 8 to the beginning of the list:\n";
+	test->insertFirst(8);
+	test->print();
+	std::cout << "\nDeleted 8 from the list:\n";
+	test->deleteNode(8);
+	test->print();
+	std::cout << "Length of the list:\n"<<test->length() <<std::endl;
 	system("pause");
 	return 0;
 }
